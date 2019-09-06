@@ -2,7 +2,7 @@
 /**
  * Munk Sidebar Manager
  *
- * @package munk_base
+ * @package munk
  */
  
 if ( !defined( 'ABSPATH' ) )

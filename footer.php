@@ -2,7 +2,7 @@
 /**
  * The template for displaying site footer
  *
- * @package mertic
+ * @package munk
  */ 
         /*
         * @hooked munk_footer_markup - 10

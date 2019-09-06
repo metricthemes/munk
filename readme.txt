@@ -1,9 +1,9 @@
 === Munk ===
 Contributors: metricthemes
 Tags: one-column, two-columns, three-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-logo, custom-menu, featured-images, footer-widgets, theme-options, threaded-comments, translation-ready, blog, e-commerce,news	
-Tested up to: 5.2.2
+Tested up to: 5.2.3
 Requires at least: 5.1
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -22,12 +22,18 @@ Munk is fast and extensible WordPress theme that comes with numerous customizati
 3. Click Activate to use your new theme right away.
 
 == Changelog ==
+= 1.0.1 = 
+* Fixed Google Font URL 404 Error
+* Added Skip Links
+* Added Sticky Header
+* Aded body_class for layout header
+
 = 1.0.0 = 
 * Initital Release
 
 == Resources ==
 * Underscores @ (C) 2012-2016 Automattic, Inc. License: [GPLv2 or later]
-* Boostrap @ Twitter 2019 License: MIT
+* Boostrap @ Twitter 2018 License: MIT
 * Kirki @ aristath License: MIT
 * WP Bootstrap Navwalker - Edward McIntyre - @twittem, WP Bootstrap, William Patton - @pattonwebz License: GPL-3.0+
 

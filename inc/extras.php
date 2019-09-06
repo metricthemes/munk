@@ -15,6 +15,9 @@ if ( !defined( 'ABSPATH' ) )
 if ( ! function_exists( 'munk_body_container_class' ) ) :
 function munk_body_container_class($classes) {	
 
+		$munk_header_layout = get_theme_mod('munk_layout_site_header_primary_ed', 'layout-one');					
+		$classes[] = $munk_header_layout;		
+
 		global $post;
 		
 		// if single post type then do this
@@ -59,11 +62,6 @@ function munk_header_title() {
 			position: absolute;
 			clip: rect(1px, 1px, 1px, 1px);
 		}
-		.hfc-site-title .site-title,
-		.hfc-site-title .site-description {
-			position: unset;
-			clip: unset;
-		}		
 	</style>
 	<?php	
 }	

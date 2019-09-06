@@ -21,14 +21,17 @@
 <body <?php body_class(); ?>>
 <?php do_action( 'wp_body_open' ); // phpcs:ignore ?>
 <div id="page" class="hfeed site">	
+<a class="skip-link sr-only" href="#content">
+<?php esc_html_e( 'Skip to content', 'munk' ); ?></a>
+
 
 		<?php 
         /*
-		* @hooked munk_header_above_markup - 10
+        * @hooked munk_header_above_markup - 10
         * @hooked munk_header_primary_markup - 20
-		* @hooked munk_header_below_markup - 30		
+        * @hooked munk_header_above_markup - 30		
         */
-        do_action('munk_header'); 	
+        do_action('munk_header'); 		
         ?>
 
 	

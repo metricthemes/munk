@@ -12,16 +12,16 @@ function munk_scripts() {
 
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/assets/css/bootstrap.css', '', MUNK_THEME_VERSION );
 	wp_enqueue_style( 'metrc-theme', get_template_directory_uri() . '/assets/css/theme.css', '', MUNK_THEME_VERSION );	
-//	wp_enqueue_style( 'munk-gutenberg', get_template_directory_uri() . '/assets/css/gutenberg.css', '', MUNK_THEME_VERSION );			
 	wp_enqueue_style( 'munk-style', get_stylesheet_uri(), '', MUNK_THEME_VERSION );	
 	
 		
 	wp_enqueue_script( 'jquery-bootstrap', get_template_directory_uri() . '/assets/js/bootstrap.js', array('jquery'), MUNK_THEME_VERSION, true );
 	wp_enqueue_script( 'munk-custom', get_template_directory_uri() . '/assets/js/munk.js', array('jquery'), MUNK_THEME_VERSION, true );					
 
-	$munk_sticky_header = get_theme_mod('munk_sticky_header', '0');			
-	
+	$munk_sticky_header = get_theme_mod('munk_layout_site_header_sticky_ed', '0');				
+	$munk_header_layout = get_theme_mod('munk_layout_site_header_primary_ed', 'layout-one');					
 	$munk_data = array(
+		'header_layout' => $munk_header_layout,
 		'sticky_header' => $munk_sticky_header,
 	);
 	
@@ -55,12 +55,12 @@ function munk_fonts_url() {
 	$font_families = array();	
 	 
 	if ( 'off' !== $ibm_plex_sans ) {
-	$font_families[] = 'IBM+Plex+Sans:400,500,600,700';
+	$font_families[] = 'IBM Plex Sans:400,500,600,700';
 	}
 	 	 
 	$query_args = array(
 		'family' => urlencode( implode( '|', $font_families ) ),
-		'subset' => urlencode( 'latin,latin-ext' ),
+		'subset' => urlencode( 'latin-ext' ),
 	);
 	 
 	$fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );

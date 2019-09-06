@@ -27,8 +27,8 @@ $munk_header_menu_class = 'col-xl-9 col-lg-9 col-md-12 col-12';
 $munk_menu_pos = 'navbar-nav  ml-auto';
 }
 elseif ($munk_header_primary_ed == 'layout-two') {
-$munk_header_logo_class = 'col-xl-12 col-lg-12 col-md-12 col-12';
-$munk_header_menu_class = 'col-xl-12 col-lg-12 col-md-12 col-12';
+$munk_header_logo_class = 'col-xl-12 col-lg-12 col-md-12 col-10';
+$munk_header_menu_class = 'col-xl-12 col-lg-12 col-md-12 col-12 header-bottom';
 $munk_menu_pos = 'navbar-nav ml-auto mx-auto';
 }
 else {
@@ -67,7 +67,7 @@ $munk_primary_menu = get_theme_mod ('munk_layout_site_header_primary_menu', '1')
                                       <?php
                                         wp_nav_menu( array(
                                             'theme_location' => 'menu-1',
-                                            'depth'	          => 2, // 1 = no dropdowns, 2 = with dropdowns.
+                                            'depth'	          => 2,
                                             'container'       => '',
                                             'container_class' => '',
                                             'container_id'    => '',

@@ -1,6 +1,16 @@
 <?php
 /**
- * munk functions and definitions
+ * Do not go gentle into that good night,
+ * Old age should burn and rave at close of day;
+ * Rage, rage against the dying of the light.
+ * 
+ * Though wise men at their end know dark is right,
+ * Because their words had forked no lightning they
+ * Do not go gentle into that good night.
+ *  
+ * Dylan Thomas, 1914 - 1953
+ *  
+ * Munk functions and definitions
  *
  * This program is free software; you can redistribute it and/or modify it under the terms of the GNU
  * General Public License as published by the Free Software Foundation; either version 2 of the License,
@@ -14,8 +24,8 @@
  *
  * @package munk
  * @subpackage Functions
- * @author     MunkThemes Pro <help@metricthemes.com>
- * @copyright  Copyright (c) 2017, MetricThemes
+ * @author     MunkThemes Pro <support@metricthemes.com>
+ * @copyright  Copyright (c) 2019, MetricThemes
  * @link       http://metricthemes.com/theme/munk
  * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
@@ -38,9 +48,9 @@
 		require get_template_directory() . '/inc/kirki-class/kirki-class-recommend.php'; // Recommend Kirki
 		require get_template_directory() . '/inc/kirki-class/class-munk-kirki.php'; // Kirki Fallback
 		require get_template_directory() . '/inc/customizer/customizer.php'; // Customizer Options
+		require get_template_directory() . '/inc/compatibility/elementor-header-footer.php'; // Elementor Header Footer Builder		
 
 		if(munk_is_woocommerce_activated()){
 			require get_template_directory() . '/inc/compatibility/woocommerce/class-munk-woocommerce.php'; // Woocommerce Support
-		}					
-		require get_template_directory() . '/inc/compatibility/elementor-header-footer.php'; // Elementor Header Footer Builder
+		}			
 		

@@ -35,7 +35,16 @@ function munk_customize_layout_site_header_primary ( $config ) {
 		'section'     => 'munk_layout_site_header_primary',
 		'default'     => '1',
 		'priority'    => 20,
-	) );			
+	) );		
+	
+	Kirki::add_field( 'munk', [
+		'type'        => 'toggle',
+		'settings'    => 'munk_layout_site_header_sticky_ed',
+		'label'       => esc_html__( 'Enable Sticky Header', 'munk' ),
+		'section'     => 'munk_layout_site_header_primary',
+		'default'     => '0',
+		'priority'    => 30,
+	] );	
 
 }
 add_action( 'kirki_config', 'munk_customize_layout_site_header_primary' );
