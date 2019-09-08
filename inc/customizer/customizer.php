@@ -1,5 +1,6 @@
 <?php
 	Munk_Kirki::add_config( 'munk', array(
+		'gutenberg_support' => true,	
         'capability'    => 'edit_theme_options',
         'option_type'   => 'theme_mod',
         'disable_output'=> false,

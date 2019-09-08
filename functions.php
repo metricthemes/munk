@@ -52,5 +52,4 @@
 
 		if(munk_is_woocommerce_activated()){
 			require get_template_directory() . '/inc/compatibility/woocommerce/class-munk-woocommerce.php'; // Woocommerce Support
-		}			
-		
+		}					
