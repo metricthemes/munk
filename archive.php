@@ -14,8 +14,9 @@
 
 get_header(); 
 ?>
-    
+    <?php munk_content_before(); ?>
 	<div id="content" class="site-content">
+	<?php munk_content_top(); ?>        
 	    <div class="container">
 	        <div class="row">
             
@@ -23,7 +24,8 @@ get_header();
                     <main id="main" class="site-main">        
 
                         
-					  <?php if( have_posts() ) : ?>
+					  <?php 					 
+					  if( have_posts() ) : ?>
                         <div class="archive-title">
                         <?php
 							the_archive_title('<h2>', '</h2>');
@@ -32,9 +34,19 @@ get_header();
                         </div>                        
                       <?php
                          /* Start the Loop */
-                         while ( have_posts() ) : the_post();
-                         get_template_part( 'template-parts/content' );
+						 munk_content_while_before();						 
+                        
+						 while ( have_posts() ) : the_post();
+
+							 munk_entry_before();
+	
+								 get_template_part( 'template-parts/content' );
+							 
+							 munk_entry_after();						 
+
                          endwhile;
+						 
+						 munk_content_while_after();       						 
                          
                         echo "<div class='clearfix'></div>";			 
                          
@@ -54,6 +66,8 @@ get_header();
                 
 			</div> <!-- .row -->   
 		</div> <!-- .container -->
+		<?php munk_content_bottom(); ?>              
     </div><!-- #content -->
+	<?php munk_content_after(); ?>    
 
 <?php  get_footer(); ?>

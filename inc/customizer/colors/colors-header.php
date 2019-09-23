@@ -118,14 +118,14 @@ function munk_customize_color_header( $config ) {
 		),		
 	) );		
 	
-Kirki::add_field( 'munk', array(
-		'type'        => 'custom',
-        'settings'    => 'munk_color_header_below',
-		'label'       => '',
-        'section'     => 'munk_color_header',
-		'default'     => '<div style="color: #191919;font-weight:600;font-size: 13px;border: 1px solid #d5d0d0;padding: 5px 15px;background-color: #fff;text-transform: uppercase;margin-left: -12px;margin-right: -14px;">' . esc_html__( 'Below Header Section', 'munk' ) . '</div>',
-		'priority'    => '25',
-	) );	
+	Kirki::add_field( 'munk', array(
+			'type'        => 'custom',
+			'settings'    => 'munk_color_header_below',
+			'label'       => '',
+			'section'     => 'munk_color_header',
+			'default'     => '<div style="color: #191919;font-weight:600;font-size: 13px;border: 1px solid #d5d0d0;padding: 5px 15px;background-color: #fff;text-transform: uppercase;margin-left: -12px;margin-right: -14px;">' . esc_html__( 'Below Header Section', 'munk' ) . '</div>',
+			'priority'    => '25',
+		) );	
 
 	
 	Kirki::add_field( 'munk',  array(

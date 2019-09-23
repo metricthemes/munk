@@ -42,7 +42,6 @@ overflow: hidden;
     padding: 20px 0px;
     z-index: 20;
     position: relative;
-    box-shadow: 0 3px 8px 0 rgba(116, 129, 141, 0.1);
     border-bottom: 1px solid #d4dadf;
     background-color: #FFFFFF;
 	-webkit-transition: all 0.3s;
@@ -51,7 +50,7 @@ overflow: hidden;
 	-o-transition: all 0.3s;
 	transition: all 0.3s;
 }
-.layout-two .site-header {
+.header-layout-two .site-header {
 padding-bottom:0px;
 }
 .site-header .site-branding h1 {
@@ -163,17 +162,16 @@ display:none;
   z-index: 100000;
   border-width:2px;
 }
-.sticky-header {
+.munk-sticky-header {
 	position: fixed;
 	top: 0; /* required */
 	width: 100%;
 	z-index: 100;
 	transition: .35s ease-out;
-	padding:5px 0px;
+	padding:0px 0px;
 }
-.header-bottom.sticky-header {
+.header-bottom.munk-sticky-header {
     left: 0;
-    box-shadow: 0 3px 8px 0 rgba(116, 129, 141, 0.1);
     border-bottom: 1px solid #d4dadf;
     padding: 0px;
 }
@@ -242,11 +240,15 @@ margin-left: -3px;
 .site-content {
 }
 #primary {
-padding:45px 45px 45px 45px;
+padding:25px 45px;
 background-color:#fff;
 }
-.entry-card {
-margin-bottom:55px;
+.single-post .entry-card {
+margin-bottom:0px;
+}
+.elementor-editor-active #primary,
+.elementor-page #primary {
+padding:0px;
 }
 .entry-card img.featured-image {
 object-fit:cover;
@@ -291,6 +293,10 @@ margin-right: 5px;
 .entry-card .entry-content,
 .entry-card .entry-excerpt {
 margin:20px 0 0 0 ;
+}
+.elementor-editor-active .entry-card .entry-content,
+.elementor-page .entry-card .entry-content {
+margin:0px;
 }
 .entry-card .entry-content p,
 .entry-card .entry-excerpt p {
@@ -912,7 +918,7 @@ margin:20px auto;
 # Comment Form
 --------------------------------------------------------------*/
 .comments-area{
-	margin-top: 60px;
+padding:45px;
 }
 .comments-area .comments-title{
 	font-size: 24px;
@@ -1407,7 +1413,7 @@ font-weight:700;
 # Author Bio
 --------------------------------------------------------------*/
 .author-section {
-  padding-bottom: 80px;
+  padding:0px 45px;
   overflow:hidden;
 }
 .author-section .author-header {

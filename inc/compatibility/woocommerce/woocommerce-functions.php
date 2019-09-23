@@ -27,22 +27,6 @@ function munk_body_wc_class($classes) {
 endif;
 add_filter('body_class', 'munk_body_wc_class');	
 
-/* meta box for woocommerce products
-* 
-* @since 1.0.0
-*/
-function munk_settings_add_meta_box_wc() {
-	add_meta_box(
-		'munk_settings-munk-settings',
-		__( 'Munk Settings', 'munk' ),
-		'munk_settings_html',
-		'product',
-		'side',
-		'high'
-	);
-}
-add_action( 'add_meta_boxes', 'munk_settings_add_meta_box_wc' );
-
 // Woocommerce Customizer Panel Position Changes
 if ( ! function_exists( 'munk_customize_woocommerce_panel' ) ) :
 

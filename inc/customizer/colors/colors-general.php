@@ -61,7 +61,7 @@ function munk_customize_color_general( $config ) {
 		'transport'   => 'auto',
 		'output' => array(
 			array(
-				'element'  => '.entry-card .entry-content p:not(["has-text-color"]), .entry-card .entry-excerpt p, body,.archive-description,.archive-description p,.wp-block-image figcaption,.related-post,.entry-content,.entry-content p,.entry-content ul,.entry-content ul li,.entry-content blockquote,.entry-content blockquote p,.entry-content span,.entry-content ol,.entry-content ol li,.entry-content caption,.entry-content table td,.entry-content table tr td,.entry-content form label,.entry-content legend,.entry-content address,.entry-content pre',
+				'element'  => '.entry-card .entry-content p,.entry-card .entry-excerpt p, body,.archive-description,.archive-description p,.wp-block-image figcaption,.related-post,.entry-content,.entry-content p,.entry-content ul,.entry-content ul li,.entry-content blockquote,.entry-content blockquote p,.entry-content span,.entry-content ol,.entry-content ol li,.entry-content caption,.entry-content table td,.entry-content table tr td,.entry-content form label,.entry-content legend,.entry-content address,.entry-content pre',
 				'property' => 'color',
 			),
 		array(

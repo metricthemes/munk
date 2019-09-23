@@ -44,6 +44,7 @@
 		require get_template_directory() . '/inc/wp-bootstrap-navwalker.php'; // Bootstrap Walker Class
 		require get_template_directory() . '/inc/metabox/metabox.php';  //Page Metaboxes
 		require get_template_directory() . '/inc/extras.php'; // Extra Functions
+		require get_template_directory() . '/inc/theme-hooks.php'; // Theme Hooks
 		require get_template_directory() . '/inc/sidebar-manager.php'; // Page Layout, Body Classs and Sidebar Functions		
 		require get_template_directory() . '/inc/kirki-class/kirki-class-recommend.php'; // Recommend Kirki
 		require get_template_directory() . '/inc/kirki-class/class-munk-kirki.php'; // Kirki Fallback

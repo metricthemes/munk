@@ -3,7 +3,7 @@ jQuery(function($) {
 	/* Sticky Menu */
     var winwidth = $(window).width();
     if( Munk_Data.sticky_header == '1' && winwidth >= 992 ){
-        var mns = "sticky-header";
+        var mns = "munk-sticky-header";
         hdr = $('.site-header').height();
 		
         if(Munk_Data.header_layout == 'layout-two') {

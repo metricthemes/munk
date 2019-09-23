@@ -13,8 +13,9 @@
  */
 get_header(); 
 ?>
-    
+    <?php munk_content_before(); ?>
 	<div id="content" class="site-content">
+	<?php munk_content_top(); ?>    
 	    <div class="container">
 	        <div class="row">
             
@@ -23,13 +24,21 @@ get_header();
 
                         
 					  <?php
-            
                         if( have_posts() ) :
                         /* Start the Loop */
+
+			            munk_content_while_before();						
                          while ( have_posts() ) : the_post();
-                       	  get_template_part( 'template-parts/content' );
+
+							munk_entry_before();
+
+								get_template_part( 'template-parts/content' );
+
+							munk_entry_after();
+							
                          endwhile;
-                         
+						 munk_content_while_after();                         
+						 
                         echo "<div class='clearfix'></div>";			 
                          
 						do_action ('munk_pagination');
@@ -48,6 +57,8 @@ get_header();
                 
 			</div> <!-- .row -->   
 		</div> <!-- .container -->
+		<?php munk_content_bottom(); ?>        
     </div><!-- #content -->
-
+	<?php munk_content_after(); ?>
+    
 <?php  get_footer(); ?>

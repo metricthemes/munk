@@ -14,25 +14,39 @@
 
 get_header(); 
 ?>   
+    <?php munk_content_before(); ?>
 	<div id="content" class="site-content">
+	<?php munk_content_top(); ?>     
 	    <div class="container">
 	        <div class="row">
             
                 <div id="primary" class="content-area <?php echo munk_primary_order(); //phpcs:ignore ?>">
                     <main id="main" class="site-main">        
 
-						<?php while ( have_posts() ) : the_post(); //main loop ?>                        
+						<?php 
+						munk_content_while_before();								
+						while ( have_posts() ) : the_post(); //main loop ?>                        
             
 							<?php 
+							
+							munk_entry_before();
+																					
                             get_template_part( 'template-parts/content', 'page' );
-                                                        
+							
+                            munk_entry_after();							
+                                               
+							munk_comments_before();											            
 							$ed_comments = get_theme_mod('ed_comments', true);
                             if ( (comments_open() || get_comments_number()) && $ed_comments ) :
 	                            comments_template();
                             endif; 
+							munk_comments_after();
                             ?> 
                         
-                        <?php endwhile; // End of the loop. ?>                          
+                        <?php 
+						endwhile; // End of the loop. 
+						munk_content_while_after();   						
+						?>                          
                						
 
                     </main><!-- #main -->
@@ -42,7 +56,8 @@ get_header();
                 
 			</div> <!-- .row -->   
 		</div> <!-- .container -->
+		<?php munk_content_bottom(); ?>             
     </div><!-- #content -->
-
+	<?php munk_content_after(); ?>
 
 <?php  get_footer(); ?>

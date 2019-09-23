@@ -150,7 +150,7 @@ foreach( $munk_blog_layout_sections as $munk_section ) {
  get_template_part('inc/customizer/layout/blog/layout', $munk_section);
 }
 
-$munk_header_layout_sections = array( 'above_header',	'primary_header', 'below_header' );
+$munk_header_layout_sections = array( 'above_header',	'primary_header', 'sticky_header', 'below_header' );
 foreach( $munk_header_layout_sections as $munk_section ) {
  get_template_part('inc/customizer/layout/header/layout', $munk_section);
 }

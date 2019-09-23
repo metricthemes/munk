@@ -40,8 +40,8 @@ $munk_menu_pos = 'navbar-nav ml-auto mx-auto';
 $munk_primary_menu = get_theme_mod ('munk_layout_site_header_primary_menu', '1');
 ?>
 
-        <header id="masthead" class="site-header" role="banner">
-            
+        <header id="masthead" class="site-header munk-header" role="banner">
+	            <?php munk_header_top(); ?>
                 <div class="container">
                     <div class="row">
                         <div class="<?php echo esc_attr($munk_header_logo_class); ?>">
@@ -82,9 +82,9 @@ $munk_primary_menu = get_theme_mod ('munk_layout_site_header_primary_menu', '1')
                         <?php } ?>
                     </div>
                 </div>
-            
+            <?php munk_header_bottom(); ?>
         </header><!-- #masthead -->    		
-			
+		<?php munk_header_after(); ?>			
 <?php			
 }
 add_action( 'munk_header', 'munk_header_primary_markup', 20 ); 

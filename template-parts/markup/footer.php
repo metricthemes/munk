@@ -20,18 +20,20 @@ if( !function_exists('munk_footer_markup') ) :
 		$munk_footer_ed = get_theme_mod('ed_footer_widget_ed', true);						
 		?>
 			<footer id="colophon" class="site-footer">
-			<?php if ($munk_footer_ed) { ?>                
-				<div class="footer-t">
-					<div class="container">
-						<?php get_sidebar('footer'); ?>
-					</div>
-				</div>
-			<?php } ?>                    
-				<div class="site-info">
-					<div class="container">                
-						<?php do_action ('munk_site_info'); ?>                                
-					</div>
-				</div>		
+				<?php munk_footer_top(); ?>
+                <?php if ($munk_footer_ed) { ?>                
+                    <div class="footer-t">
+                        <div class="container">
+                            <?php get_sidebar('footer'); ?>
+                        </div>
+                    </div>
+                <?php } ?>                    
+                    <div class="site-info">
+                        <div class="container">                
+                            <?php do_action ('munk_site_info'); ?>                                
+                        </div>
+                    </div>		
+                <?php munk_footer_bottom(); ?>                
 			</footer>			            
 	 <?php				
 	  }

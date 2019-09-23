@@ -20,22 +20,26 @@ function munk_settings_get_meta( $value ) {
 }
 
 function munk_settings_add_meta_box() {
-	add_meta_box(
-		'munk_settings-munk-settings',
-		__( 'Munk Settings', 'munk' ),
-		'munk_settings_html',
-		'post',
-		'side',
-		'high'
+
+	$munk_cpt_args = array(
+	   'public'   => true,
 	);
-	add_meta_box(
-		'munk_settings-munk-settings',
-		__( 'Munk Settings', 'munk' ),
-		'munk_settings_html',
-		'page',
-		'side',
-		'high'
-	);
+	$munk_cpt_output = 'names';
+	$munk_cpt_operator = 'and';
+	$munk_cpt_types = get_post_types( $munk_cpt_args, $munk_cpt_output, $munk_cpt_operator ); 
+	
+	foreach ( $munk_cpt_types  as $munk_cpt ) {	
+		add_meta_box(
+			'munk_settings-munk-settings',
+			__( 'Munk Settings', 'munk' ),
+			'munk_settings_html',
+			$munk_cpt,
+			'side',
+			'high'
+		);
+	}	
+	
+	
 }
 add_action( 'add_meta_boxes', 'munk_settings_add_meta_box' );
 

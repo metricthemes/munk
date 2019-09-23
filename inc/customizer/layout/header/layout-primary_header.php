@@ -35,16 +35,161 @@ function munk_customize_layout_site_header_primary ( $config ) {
 		'section'     => 'munk_layout_site_header_primary',
 		'default'     => '1',
 		'priority'    => 20,
-	) );		
+	) );
 	
-	Kirki::add_field( 'munk', [
-		'type'        => 'toggle',
-		'settings'    => 'munk_layout_site_header_sticky_ed',
-		'label'       => esc_html__( 'Enable Sticky Header', 'munk' ),
+	Kirki::add_field( 'munk', array(
+		'type'        => 'custom',
+        'settings'    => 'munk_color_primary_header_layout_label',
+		'label'       => '',
+        'section'     => 'munk_color_button',
+		'default'     => '<div style="color: #191919;font-weight:600;font-size: 13px;border: 1px solid #d5d0d0;padding: 5px 15px;background-color: #fff;text-transform: uppercase;margin-left: -12px;margin-right: -14px;">' . esc_html__( 'Primary Header Layout', 'munk' ) . '</div>',
+		'priority'    => '25',
+	) );				
+	
+Kirki::add_field( 'munk', array(
+		'type'        => 'dimensions',
+		'settings'    => 'munk_layout_site_header_primary_padding',
+		'label'       => esc_html__( 'Primary Header Padding', 'munk' ),
+		'description' => esc_html__( 'Adjust primary header top and bottom padding', 'munk' ),
 		'section'     => 'munk_layout_site_header_primary',
-		'default'     => '0',
-		'priority'    => 30,
-	] );	
+		'transport'   => 'auto',				
+		'priority'    => '30',		
+		'default'     => array(
+			'padding-top'  => '10px',
+			'padding-bottom'  => '10px',
+		),
+		'choices'     => array(
+			'labels' => array(
+				'padding-top'  => esc_html__( 'Padding Top', 'munk' ),
+				'padding-bottom'  => esc_html__( 'Padding Bottom', 'munk' ),
+			),
+		),	
+		'output'    => array(
+			array(
+			  'choice'      => 'padding-top',
+			  'element'     => '.header-layout-one .munk-header',
+			  'property'    => 'padding-top',
+			  'suffix' => '!important',			  
+			),
+			array(
+			  'choice'      => 'padding-bottom',
+			  'element'     => '.header-layout-one .munk-header',
+			  'property'    => 'padding-bottom',
+			  'suffix' => '!important',			  
+			),
+			array(
+			  'choice'      => 'padding-top',
+			  'element'     => '.header-layout-two .munk-header',
+			  'property'    => 'padding-top',
+			  'suffix' => '!important',			  
+			),			
+			array(
+			  'choice'      => 'padding-bottom',
+			  'element'     => '.header-layout-two .munk-header',
+			  'property'    => 'padding-bottom',
+			  'suffix' => '!important',			  
+			),						
+		  ),		
+	) );
+	
+	Kirki::add_field( 'munk', array(
+		'type'        => 'slider',
+		'settings'    => 'munk_layout_site_header_primary_logo',
+		'label'       => esc_html__( 'Primary Header Logo Size', 'kirki' ),
+		'description' => esc_html__( 'Adjust header logo size.', 'munk' ),		
+		'transport'   => 'auto',		
+		'section'     => 'munk_layout_site_header_primary',
+		'default'     => 100,
+		'priority'    => '35',		
+		'choices'     => array(
+			'min'  => 0,
+			'max'  => 100,
+			'step' => 1,
+		),		
+		'output' => array(
+			array(
+				'element'  => '.munk-header .site-branding .custom-logo',
+				'property' => 'max-width',
+				'units' => '%',
+			),
+		),		
+	) );	
+
+	Kirki::add_field( 'munk', [
+		'type'        => 'dimension',
+		'settings'    => 'munk_layout_site_header_primary_border_ed',
+		'label'       => esc_html__( 'Bottom Border', 'munk' ),
+		'section'     => 'munk_layout_site_header_primary',
+		'default'     => '1px',
+		'priority'    => '40',		
+		'transport'   => 'auto',		
+		'output' => array(
+			array(
+				'element'  => '.munk-header',
+				'property' => 'border-bottom-width',				
+				'suffix' => '!important',
+			),
+		),			
+	] );		
+	
+	Kirki::add_field( 'munk', array(
+		'type'        => 'color',
+		'settings'    => 'munk_layout_site_header_primary_border_color',
+		'label'       => __( 'Border Color', 'kirki' ),
+		'description' => esc_html__( 'Add bottom border color to primary header', 'munk' ),
+		'section'     => 'munk_layout_site_header_primary',
+		'transport'   => 'auto',
+		'priority'    => '45',		
+		'default'     => '#d4dadf',
+		'output' => array(
+			array(
+				'element'  => '.munk-header',
+				'property' => 'border-color',				
+				'suffix' => '!important',				
+			),
+		),			
+	) );	
+	
+	Kirki::add_field( 'munk', array(
+		'type'        => 'toggle',
+		'settings'    => 'munk_layout_site_header_shadow',
+		'label'       => esc_html__( 'Enable Header Box Shadow', 'munk' ),
+		'section'     => 'munk_layout_site_header_primary',
+		'default'     => '1',
+		'priority'    => 50,
+		'transport'   => 'auto',		
+		'output' => array(
+			array(
+				'element'  => '.munk-header',
+				'property'      => 'box-shadow',
+				'value_pattern' => '0 3px 8px 0 rgba(116, 129, 141, 0.1)',
+				'exclude'       => array( false ),
+			),			
+		),					
+	) );	
+	
+	Kirki::add_field( 'munk', array(
+		'type'        => 'slider',
+		'settings'    => 'munk_layout_site_header_primary_margin_bottom',
+		'label'       => esc_html__( 'Margin Bottom', 'kirki' ),
+		'description' => esc_html__( 'Adjust primary header bottom margin', 'munk' ),		
+		'transport'   => 'auto',		
+		'section'     => 'munk_layout_site_header_primary',
+		'default'     => 0,
+		'priority'    => '55',		
+		'choices'     => array(
+			'min'  => 0,
+			'max'  => 500,
+			'step' => 1,
+		),		
+		'output' => array(
+			array(
+				'element'  => '.munk-header',
+				'property' => 'margin-bottom',
+				'units' => 'px',
+			),
+		),		
+	) );	
 
 }
 add_action( 'kirki_config', 'munk_customize_layout_site_header_primary' );

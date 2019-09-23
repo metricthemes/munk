@@ -82,7 +82,7 @@ function munk_sidebar_manager() {
 			}
 			return array($classes, $munk_side_order, $munk_content_order);			
 		}					
-		elseif (is_singular('post')) {					
+		elseif (is_singular(array( 'post', 'doc' ))) {					
 			if ($single_sidebar_ed && $single_sidebar_ed != 'default') {										
 				if ($single_sidebar_ed == 'right-sidebar') {
 					$classes = 'right-sidebar';
