@@ -29,6 +29,98 @@ function munk_customize_layout_blog_archive ( $config ) {
 	) );	
 	
 	Kirki::add_field( 'munk', array(
+		'type'        => 'dimensions',
+		'settings'    => 'munk_layout_blog_archive_entry_padding',
+		'label'       => esc_html__( 'Post Content Padding', 'munk' ),
+		'description' => esc_html__( 'Adjust post content padding', 'munk' ),
+		'section'     => 'munk_layout_blog_archive',
+		'priority'    => 6,		
+		'transport'   => 'auto',		
+		'default'     => array(
+			'padding_top'    => '45px',
+			'padding_right'  => '45px',
+			'padding_bottom' => '45px',
+			'padding_left'   => '45px',
+		),
+		'choices'     => array(
+			'labels' => array(
+				'padding_top'  => esc_html__( 'Top', 'munk' ),
+				'padding_right'  => esc_html__( 'Right', 'munk' ),
+				'padding_bottom' => esc_html__( 'Bottom', 'munk' ),
+				'padding_left' => esc_html__( 'Left', 'munk' ),
+			),
+		),
+		'output'    => array(
+			array(
+			  'choice'      => 'padding_top',
+			  'element'     => '#primary .entry-card',
+			  'property'    => 'padding-top',
+			),
+			array(
+			  'choice'      => 'padding_right',
+			  'element'     => '#primary .entry-card',
+			  'property'    => 'padding-right',
+			),
+			array(
+			  'choice'      => 'padding_bottom',
+			  'element'     => '#primary .entry-card',
+			  'property'    => 'padding-bottom',
+			),			
+			array(
+			  'choice'      => 'padding_left',
+			  'element'     => '#primary .entry-card',
+			  'property'    => 'padding-left',
+			),						
+		),				
+	) );
+	
+	Kirki::add_field( 'munk', array(
+		'type'        => 'dimensions',
+		'settings'    => 'munk_layout_blog_archive_entry_margin',
+		'label'       => esc_html__( 'Post Content Margin', 'munk' ),
+		'description' => esc_html__( 'Adjust post content margin', 'munk' ),
+		'section'     => 'munk_layout_blog_archive',
+		'priority'    => 7,		
+		'transport'   => 'auto',		
+		'default'     => array(
+			'margin_top'  	 => '0px',
+			'margin_right'  => '0px',
+			'margin_bottom' => '0px',
+			'margin_left'   => '0px',
+		),
+		'choices'     => array(
+			'labels' => array(
+				'margin_top'  => esc_html__( 'Top', 'munk' ),
+				'margin_right'  => esc_html__( 'Right', 'munk' ),
+				'margin_bottom' => esc_html__( 'Bottom', 'munk' ),
+				'margin_left' => esc_html__( 'Left', 'munk' ),
+			),
+		),
+		'output'    => array(
+			array(
+			  'choice'      => 'margin_top',
+			  'element'     => '#primary .entry-card',
+			  'property'    => 'margin-top',
+			),
+			array(
+			  'choice'      => 'margin_right',
+			  'element'     => '#primary .entry-card',
+			  'property'    => 'margin-right',
+			),
+			array(
+			  'choice'      => 'margin_bottom',
+			  'element'     => '#primary .entry-card',
+			  'property'    => 'margin-bottom',
+			),			
+			array(
+			  'choice'      => 'margin_left',
+			  'element'     => '#primary .entry-card',
+			  'property'    => 'margin-left',
+			),						
+		),				
+	) );		
+	
+	Kirki::add_field( 'munk', array(
 		'type'        => 'sortable',
 		'settings'    => 'munk_layout_blog_archive_content_ed',
 		'label'       => esc_html__( 'Post Layout', 'munk' ),

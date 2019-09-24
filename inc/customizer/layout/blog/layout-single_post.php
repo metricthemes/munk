@@ -20,13 +20,106 @@ function munk_customize_layout_single_post ( $config ) {
 		'label'       => esc_html__( 'Single Post Layout', 'munk' ),
 		'section'     => 'munk_customize_layout_single_post',
 		'default'     => 'right-sidebar',
-		'priority'    => 10,
+		'priority'    => 5,
 		'choices'     => array(
 			'no-sidebar'  => get_template_directory_uri() . '/inc/customizer/assets/images/no-sidebar.png',
 			'left-sidebar' => get_template_directory_uri() . '/inc/customizer/assets/images/left-sidebar.png',
 			'right-sidebar'  => get_template_directory_uri() . '/inc/customizer/assets/images/right-sidebar.png',
 		),
 	) );	
+	
+	Kirki::add_field( 'munk', array(
+		'type'        => 'dimensions',
+		'settings'    => 'munk_layout_single_entry_padding',
+		'label'       => esc_html__( 'Post Content Padding', 'munk' ),
+		'description' => esc_html__( 'Adjust post content padding', 'munk' ),
+		'section'     => 'munk_customize_layout_single_post',
+		'priority'    => 6,		
+		'transport'   => 'auto',		
+		'default'     => array(
+			'padding_top'    => '45px',
+			'padding_right'  => '45px',
+			'padding_bottom' => '45px',
+			'padding_left'   => '45px',
+		),
+		'choices'     => array(
+			'labels' => array(
+				'padding_top'  => esc_html__( 'Top', 'munk' ),
+				'padding_right'  => esc_html__( 'Right', 'munk' ),
+				'padding_bottom' => esc_html__( 'Bottom', 'munk' ),
+				'padding_left' => esc_html__( 'Left', 'munk' ),
+			),
+		),
+		'output'    => array(
+			array(
+			  'choice'      => 'padding_top',
+			  'element'     => '.single-post #primary .entry-card',
+			  'property'    => 'padding-top',
+			),
+			array(
+			  'choice'      => 'padding_right',
+			  'element'     => '.single-post #primary .entry-card',
+			  'property'    => 'padding-right',
+			),
+			array(
+			  'choice'      => 'padding_bottom',
+			  'element'     => '.single-post #primary .entry-card',
+			  'property'    => 'padding-bottom',
+			),			
+			array(
+			  'choice'      => 'padding_left',
+			  'element'     => '.single-post #primary .entry-card',
+			  'property'    => 'padding-left',
+			),						
+		),				
+	) );
+	
+	Kirki::add_field( 'munk', array(
+		'type'        => 'dimensions',
+		'settings'    => 'munk_layout_single_entry_margin',
+		'label'       => esc_html__( 'Post Content Margin', 'munk' ),
+		'description' => esc_html__( 'Adjust post content margin', 'munk' ),
+		'section'     => 'munk_customize_layout_single_post',
+		'priority'    => 7,		
+		'transport'   => 'auto',		
+		'default'     => array(
+			'margin_top'  	 => '0px',
+			'margin_right'  => '0px',
+			'margin_bottom' => '0px',
+			'margin_left'   => '0px',
+		),
+		'choices'     => array(
+			'labels' => array(
+				'margin_top'  => esc_html__( 'Top', 'munk' ),
+				'margin_right'  => esc_html__( 'Right', 'munk' ),
+				'margin_bottom' => esc_html__( 'Bottom', 'munk' ),
+				'margin_left' => esc_html__( 'Left', 'munk' ),
+			),
+		),
+		'output'    => array(
+			array(
+			  'choice'      => 'margin_top',
+			  'element'     => '.single-post #primary .entry-card',
+			  'property'    => 'margin-top',
+			),
+			array(
+			  'choice'      => 'margin_right',
+			  'element'     => '.single-post #primary .entry-card',
+			  'property'    => 'margin-right',
+			),
+			array(
+			  'choice'      => 'margin_bottom',
+			  'element'     => '.single-post #primary .entry-card',
+			  'property'    => 'margin-bottom',
+			),			
+			array(
+			  'choice'      => 'margin_left',
+			  'element'     => '.single-post #primary .entry-card',
+			  'property'    => 'margin-left',
+			),						
+		),				
+	) );		
+	
 			
 	Kirki::add_field( 'munk', array(
 		'type'        => 'sortable',

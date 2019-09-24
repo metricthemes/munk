@@ -71,7 +71,7 @@ function munk_customize_layout_site_header_sticky ( $config ) {
 	Kirki::add_field( 'munk', array(
 		'type'        => 'slider',
 		'settings'    => 'munk_layout_site_header_sticky_logo',
-		'label'       => esc_html__( 'Sticky Header Logo Size', 'kirki' ),
+		'label'       => esc_html__( 'Sticky Header Logo Size', 'munk' ),
 		'description' => esc_html__( 'Adjust sticky header logo size.', 'munk' ),		
 		'transport'   => 'auto',		
 		'section'     => 'munk_layout_site_header_sticky',
@@ -109,7 +109,7 @@ function munk_customize_layout_site_header_sticky ( $config ) {
 	Kirki::add_field( 'munk', array(
 		'type'        => 'color',
 		'settings'    => 'munk_layout_site_header_sticky_border_color',
-		'label'       => __( 'Border Color', 'kirki' ),
+		'label'       => __( 'Border Color', 'munk' ),
 		'description' => esc_html__( 'Add bottom border color to sticky header', 'munk' ),
 		'section'     => 'munk_layout_site_header_sticky',
 		'transport'   => 'auto',

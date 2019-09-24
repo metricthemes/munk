@@ -22,6 +22,11 @@ Munk is fast and extensible WordPress theme that comes with numerous customizati
 3. Click Activate to use your new theme right away.
 
 == Changelog ==
+= 1.0.2 = 
+* Added ability to adjust margin and padding for content.
+* Fixed font and color for woocommerce buttons
+* Added toggle to disable on hover woocommerce add to cart button
+
 = 1.0.1 = 
 * Fixed Google Font URL 404 Error
 * Added Skip Links
@@ -34,7 +39,8 @@ Munk is fast and extensible WordPress theme that comes with numerous customizati
 == Resources ==
 * Underscores @ (C) 2012-2016 Automattic, Inc. License: [GPLv2 or later]
 * Boostrap @ Twitter 2018 License: MIT
-* Kirki @ aristath License: MIT
+* Kirki @ aristath License: MIT 
+* WooCommerce @ Automattic License: [GPLv3 or later]
 * WP Bootstrap Navwalker - Edward McIntyre - @twittem, WP Bootstrap, William Patton - @pattonwebz License: GPL-3.0+
 
 == Screenshots ==

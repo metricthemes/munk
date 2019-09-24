@@ -16,6 +16,65 @@ function munk_customize_colors_woocommerce( $config ) {
 	
 	Kirki::add_field( 'munk', array(
 			'type'        => 'custom',
+			'settings'    => 'munk_color_shop_layout_layout',
+			'label'       => '',
+			'section'     => 'munk_colors_woocommerce',
+			'default'     => '<div style="color: #191919;font-weight:600;font-size: 13px;border: 1px solid #d5d0d0;padding: 5px 15px;background-color: #fff;text-transform: uppercase;margin-left: -12px;margin-right: -14px;">' . esc_html__( 'Shop', 'munk' ) . '</div>',
+			'priority'    => '1',
+		) );
+		
+	Kirki::add_field( 'munk',  array(
+		'type'        => 'multicolor',
+		'settings'    => 'munk_color_shop_layout',
+		'label'       => '',
+		'section'     => 'munk_colors_woocommerce',
+		'priority'    => 2,
+		'transport'   => 'auto',
+		'choices'     => array(
+			'shop-bg'    => esc_html__( 'Product Container Background', 'munk' ),
+			'shop-title'    => esc_html__( 'Shop Page Title', 'munk' ),
+			'shop-content'   => esc_html__( 'Shop Content', 'munk' ),
+			'shop-selectbg' => esc_html__( 'Shop Order Background', 'munk' ),									
+			'shop-selectcolor' => esc_html__( 'Shop Order Color', 'munk' ),												
+		),
+		'default'     => array(
+			'shop-bg'    => '#ffffff',
+			'shop-title'    => '#212529',
+			'shop-content'   => '#212529',
+			'shop-selectbg'   => '#ffffff',			
+			'shop-selectcolor'   => '#212529',						
+		),
+		'output'    => array(
+			array(
+			  'choice'    => 'shop-bg',
+			  'element'   => '.woocommerce #primary .site-main',
+			  'property'  => 'background-color',
+			),			
+			array(
+			  'choice'    => 'shop-title',
+			  'element'   => '.woocommerce.archive h1.page-title',
+			  'property'  => 'color',
+			),
+			array(
+			  'choice'    => 'shop-content',
+			  'element'   => '.woocommerce p.woocommerce-result-count, .woocommerce .woocommerce-breadcrumb, .woocommerce .woocommerce-breadcrumb a',
+			  'property'  => 'color',
+			),	
+			array(
+			  'choice'    => 'shop-selectbg',
+			  'element'   => '.woocommerce .woocommerce-ordering select',
+			  'property'  => 'background-color',
+			),	
+			array(
+			  'choice'    => 'shop-selectcolor',
+			  'element'   => '.woocommerce .woocommerce-ordering select',
+			  'property'  => 'color',
+			),									
+		),		
+	) );			
+		
+	Kirki::add_field( 'munk', array(
+			'type'        => 'custom',
 			'settings'    => 'munk_color_product_card_label',
 			'label'       => '',
 			'section'     => 'munk_colors_woocommerce',

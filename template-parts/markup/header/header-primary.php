@@ -67,7 +67,7 @@ $munk_primary_menu = get_theme_mod ('munk_layout_site_header_primary_menu', '1')
                                       <?php
                                         wp_nav_menu( array(
                                             'theme_location' => 'menu-1',
-                                            'depth'	          => 2,
+                                            'depth'	          => 4,
                                             'container'       => '',
                                             'container_class' => '',
                                             'container_id'    => '',

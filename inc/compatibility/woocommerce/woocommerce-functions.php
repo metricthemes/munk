@@ -108,3 +108,24 @@ function munk_wc_related_products_args( $args ) {
 	
 }
 add_filter( 'woocommerce_output_related_products_args', 'munk_wc_related_products_args', 20 );
+
+
+add_filter( 'post_class', 'munk_wc_post_class', 21 );
+
+function munk_wc_post_class( $classes ) {
+
+    if ( 'product' == get_post_type() ) {
+	
+		$munk_fixed_wc_btn = get_theme_mod('munk_woocommerce_shop_add_to_cart_hover', 1);
+		if ($munk_fixed_wc_btn != '1') {
+        	$classes[] = 'fixedbutton';
+		}
+    
+    return $classes;	
+	
+	}
+	
+    return $classes;
+	
+}
+			

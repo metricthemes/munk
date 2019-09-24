@@ -239,10 +239,6 @@ margin-left: -3px;
 --------------------------------------------------------------*/
 .site-content {
 }
-#primary {
-padding:25px 45px;
-background-color:#fff;
-}
 .single-post .entry-card {
 margin-bottom:0px;
 }
@@ -257,6 +253,7 @@ width:100%;
 }
 .entry-card {
 background-color:#fff;
+padding:25px 45px;
 }
 .entry-card .entry-title a, visited {
 font-size:25px;
@@ -1062,12 +1059,6 @@ font-size:13px;
 #secondary {
 padding:45px;
 }
-.right-sidebar #secondary {
-border-left:1px solid #E6E8E8;
-}
-.left-sidebar #secondary {
-border-right:1px solid #E6E8E8;
-}
 #secondary .widget {
 margin-bottom:25px;
 font-size:14px;
@@ -1413,7 +1404,6 @@ font-weight:700;
 # Author Bio
 --------------------------------------------------------------*/
 .author-section {
-  padding:0px 45px;
   overflow:hidden;
 }
 .author-section .author-header {

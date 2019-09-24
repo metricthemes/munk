@@ -67,9 +67,14 @@ if ( ! class_exists( 'Munk_Woocommerce' ) ) :
 			 * Moved add to cart buttons below image thumbnail.
 			 * @ Archives Only
 			 */
-			remove_action('woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10);
-			add_action('woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_add_to_cart', 10);																			
+			$munk_fixed_wc_btn = get_theme_mod('munk_woocommerce_shop_add_to_cart_hover', 1);
+			if ($munk_fixed_wc_btn == '1') {
 			
+				remove_action('woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10);
+				add_action('woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_add_to_cart', 10);																			
+				
+			}						
+						
 							
 		}
 		

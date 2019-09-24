@@ -212,6 +212,18 @@ function munk_is_woocommerce_activated() {
 }
 
 /**
+ * Check Elementor PB Activation
+ */
+function munk_is_elementor_activated() {
+	
+	if ( did_action( 'elementor/loaded' ) ) {
+		return true;
+	}
+		
+	return false;
+}
+
+/**
  * Footer Credits
 */
 if ( ! function_exists( 'munk_footer_credit' ) ) :

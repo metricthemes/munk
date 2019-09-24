@@ -24,7 +24,7 @@ function munk_customize_color_general( $config ) {
 		'transport'   => 'auto',
 		'output' => array(
 			array(
-				'element'  => '#primary, .entry-card',
+				'element'  => '#primary .entry-card',
 				'property' => 'background-color',
 			),
 		),		

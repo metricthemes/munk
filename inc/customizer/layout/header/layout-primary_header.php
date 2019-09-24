@@ -89,13 +89,13 @@ Kirki::add_field( 'munk', array(
 			  'property'    => 'padding-bottom',
 			  'suffix' => '!important',			  
 			),						
-		  ),		
+		),		
 	) );
 	
 	Kirki::add_field( 'munk', array(
 		'type'        => 'slider',
 		'settings'    => 'munk_layout_site_header_primary_logo',
-		'label'       => esc_html__( 'Primary Header Logo Size', 'kirki' ),
+		'label'       => esc_html__( 'Primary Header Logo Size', 'munk' ),
 		'description' => esc_html__( 'Adjust header logo size.', 'munk' ),		
 		'transport'   => 'auto',		
 		'section'     => 'munk_layout_site_header_primary',
@@ -135,7 +135,7 @@ Kirki::add_field( 'munk', array(
 	Kirki::add_field( 'munk', array(
 		'type'        => 'color',
 		'settings'    => 'munk_layout_site_header_primary_border_color',
-		'label'       => __( 'Border Color', 'kirki' ),
+		'label'       => __( 'Border Color', 'munk' ),
 		'description' => esc_html__( 'Add bottom border color to primary header', 'munk' ),
 		'section'     => 'munk_layout_site_header_primary',
 		'transport'   => 'auto',
@@ -171,7 +171,7 @@ Kirki::add_field( 'munk', array(
 	Kirki::add_field( 'munk', array(
 		'type'        => 'slider',
 		'settings'    => 'munk_layout_site_header_primary_margin_bottom',
-		'label'       => esc_html__( 'Margin Bottom', 'kirki' ),
+		'label'       => esc_html__( 'Margin Bottom', 'munk' ),
 		'description' => esc_html__( 'Adjust primary header bottom margin', 'munk' ),		
 		'transport'   => 'auto',		
 		'section'     => 'munk_layout_site_header_primary',

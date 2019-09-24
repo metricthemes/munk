@@ -44,7 +44,7 @@ function munk_color_button_settings( $config ) {
 		'output'    => array(
 			array(
 			  'choice'    => 'bgcolor',
-			  'element'   => '.navigation.pagination .nav-links a:hover,.navigation.pagination .nav-links .current, .no-results .search-submit, .woocommerce div.product .cart .single_add_to_cart_button, .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt,.wp-block-button__link,.is-style-outline .wp-block-button__link',
+			  'element'   => '.navigation.pagination .nav-links a:hover,.navigation.pagination .nav-links .current, .no-results .search-submit, .woocommerce div.product .cart .single_add_to_cart_button, .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt,.wp-block-button__link,.is-style-outline .wp-block-button__link, .woocommerce-page ul.products li.product .button, .woocommerce ul.products li.product .button, .woocommerce-js.woocommerce ul.products li.product .button',
 			  'property'  => 'background-color',
 			),
 			array(
@@ -55,7 +55,7 @@ function munk_color_button_settings( $config ) {
 			),
 			array(
 			  'choice'    => 'bgcolor',
-			  'element'   => '.navigation.pagination .nav-links a:hover,.navigation.pagination .nav-links .current, .no-results .search-submit, .woocommerce div.product .cart .single_add_to_cart_button, .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt,.wp-block-button__link,.is-style-outline .wp-block-button__link',
+			  'element'   => '.navigation.pagination .nav-links a:hover,.navigation.pagination .nav-links .current, .no-results .search-submit, .woocommerce div.product .cart .single_add_to_cart_button, .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt,.wp-block-button__link,.is-style-outline .wp-block-button__link, .woocommerce-page ul.products li.product .button, .woocommerce ul.products li.product .button, .woocommerce-js.woocommerce ul.products li.product .button',
 			  'property'  => 'border-color',
 			),
 			array(
@@ -66,7 +66,7 @@ function munk_color_button_settings( $config ) {
 			),						
 			array(
 			  'choice'    => 'text',
-			  'element'   => '.navigation.pagination .nav-links a:hover,.navigation.pagination .nav-links .current, .no-results .search-submit, .woocommerce div.product .cart .single_add_to_cart_button, .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt,.wp-block-button__link,.is-style-outline .wp-block-button__link', 
+			  'element'   => '.navigation.pagination .nav-links a:hover,.navigation.pagination .nav-links .current, .no-results .search-submit, .woocommerce div.product .cart .single_add_to_cart_button, .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt,.wp-block-button__link,.is-style-outline .wp-block-button__link, .woocommerce-page ul.products li.product .button, .woocommerce ul.products li.product .button, .woocommerce-js.woocommerce ul.products li.product .button', 
 			  'property'  => 'color',
 			  'suffix'   => ' !important',			  
 			),
@@ -78,7 +78,7 @@ function munk_color_button_settings( $config ) {
 			),									
 			array(
 			  'choice'    => 'hover-bg',
-			  'element'   => '.navigation.pagination .nav-links a:hover,.navigation.pagination .nav-links .current, .woocommerce div.product .cart .single_add_to_cart_button:hover, .woocommerce #respond input#submit.alt:hover, .woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover,.wp-block-button__link:hover,.is-style-outline .wp-block-button__link:hover',
+			  'element'   => '.navigation.pagination .nav-links a:hover,.navigation.pagination .nav-links .current, .woocommerce div.product .cart .single_add_to_cart_button:hover, .woocommerce #respond input#submit.alt:hover, .woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover,.wp-block-button__link:hover,.is-style-outline .wp-block-button__link:hover, .woocommerce-page ul.products li.product .button:hover, .woocommerce ul.products li.product .button:hover, .woocommerce-js.woocommerce ul.products li.product .button:hover',
 			  'property'  => 'background-color',
 			),
 			array(
@@ -89,7 +89,7 @@ function munk_color_button_settings( $config ) {
 			),			
 			array(
 			  'choice'    => 'hover-text',
-			  'element'   => '.navigation.pagination .nav-links a:hover,.navigation.pagination .nav-links .current, .woocommerce div.product .cart .single_add_to_cart_button:hover, .woocommerce #respond input#submit.alt:hover, .woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover,.wp-block-button__link:hover,.is-style-outline .wp-block-button__link:hover',
+			  'element'   => '.navigation.pagination .nav-links a:hover,.navigation.pagination .nav-links .current, .woocommerce div.product .cart .single_add_to_cart_button:hover, .woocommerce #respond input#submit.alt:hover, .woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover,.wp-block-button__link:hover,.is-style-outline .wp-block-button__link:hover, .woocommerce-page ul.products li.product .button:hover, .woocommerce ul.products li.product .button:hover, .woocommerce-js.woocommerce ul.products li.product .button:hover',
 			  'property'  => 'color',
 			  'suffix'   => ' !important',			  			  
 			),		
@@ -102,7 +102,7 @@ function munk_color_button_settings( $config ) {
 			),						
 			array(
 			  'choice'    => 'hover-text',
-			  'element'   => '.navigation.pagination .nav-links a:hover,.navigation.pagination .nav-links .current, .woocommerce div.product .cart .single_add_to_cart_button:hover, .woocommerce #respond input#submit.alt:hover, .woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover,.wp-block-button__link:hover,.is-style-outline .wp-block-button__link:hover',
+			  'element'   => '.navigation.pagination .nav-links a:hover,.navigation.pagination .nav-links .current, .woocommerce div.product .cart .single_add_to_cart_button:hover, .woocommerce #respond input#submit.alt:hover, .woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover,.wp-block-button__link:hover,.is-style-outline .wp-block-button__link:hover, .woocommerce-page ul.products li.product .button:hover, .woocommerce ul.products li.product .button:hover, .woocommerce-js.woocommerce ul.products li.product .button:hover',
 			  'property'  => 'border-color',
 			),						
 			array(
@@ -145,32 +145,32 @@ function munk_color_button_settings( $config ) {
 		'output'    => array(
 			array(
 			  'choice'    => 'bgcolor',
-			  'element'   => '.entry-card .read-more a, .widget_search .search-submit, .mt-header-ed .search-submit, .entry-content form input#submit, .entry-content a.button, .entry-content button.button, .entry-content input.button, .entry-content form button, #respond .form-submit #submit,#respond .form-submit #submit:hover, .woocommerce #respond input#submit.alt, .no-results .search-submit',
+			  'element'   => '.entry-card .read-more a, .widget_search .search-submit, .mt-header-ed .search-submit, .entry-content form input#submit, .entry-content a.button, .entry-content button.button, .entry-content input.button, .entry-content form button, #respond .form-submit #submit,#respond .form-submit #submit:hover, .woocommerce #respond input#submit.alt, .no-results .search-submit,.woocommerce-page ul.products li.product .added_to_cart, .woocommerce ul.products li.product .added_to_cart, .woocommerce-js.woocommerce ul.products li.product .added_to_cart',
 			  'property'  => 'background-color',
 			),
 			array(
 			  'choice'    => 'bgcolor',
-			  'element'   => '.entry-card .read-more a,#respond .form-submit #submit, .woocommerce #respond input#submit.alt, .no-results .search-submit',
+			  'element'   => '.entry-card .read-more a,#respond .form-submit #submit, .woocommerce #respond input#submit.alt, .no-results .search-submit,.woocommerce-page ul.products li.product .added_to_cart, .woocommerce ul.products li.product .added_to_cart, .woocommerce-js.woocommerce ul.products li.product .added_to_cart',
 			  'property'  => 'border-color',
 			),			
 			array(
 			  'choice'    => 'text',
-			  'element'   => '.entry-card .read-more a,#respond .form-submit #submit, .woocommerce #respond input#submit.alt, .no-results .search-submit', 
+			  'element'   => '.entry-card .read-more a,#respond .form-submit #submit, .woocommerce #respond input#submit.alt, .no-results .search-submit,.woocommerce-page ul.products li.product .added_to_cart, .woocommerce ul.products li.product .added_to_cart, .woocommerce-js.woocommerce ul.products li.product .added_to_cart', 
 			  'property'  => 'color',
 			),
 			array(
 			  'choice'    => 'hover-bg',
-			  'element'   => '.entry-card .read-more a:hover, #respond .form-submit #submit:hover, .woocommerce #respond input#submit.alt:hover, .no-results .search-submit:hover',
+			  'element'   => '.entry-card .read-more a:hover, #respond .form-submit #submit:hover, .woocommerce #respond input#submit.alt:hover, .no-results .search-submit:hover,.woocommerce-page ul.products li.product .added_to_cart:hover, .woocommerce ul.products li.product .added_to_cart:hover, .woocommerce-js.woocommerce ul.products li.product .added_to_cart:hover',
 			  'property'  => 'background-color',
 			),
 			array(
 			  'choice'    => 'hover-text',
-			  'element'   => '.entry-card .read-more a:hover, #respond .form-submit #submit:hover, .woocommerce #respond input#submit.alt:hover, .no-results .search-submit:hover',
+			  'element'   => '.entry-card .read-more a:hover, #respond .form-submit #submit:hover, .woocommerce #respond input#submit.alt:hover, .no-results .search-submit:hover,.woocommerce-page ul.products li.product .added_to_cart:hover, .woocommerce ul.products li.product .added_to_cart:hover, .woocommerce-js.woocommerce ul.products li.product .added_to_cart:hover',
 			  'property'  => 'color',
 			),		
 			array(
 			  'choice'    => 'hover-text',
-			  'element'   => '.entry-card .read-more a:hover, #respond .form-submit #submit:hover, .woocommerce #respond input#submit.alt:hover, .no-results .search-submit:hover',
+			  'element'   => '.entry-card .read-more a:hover, #respond .form-submit #submit:hover, .woocommerce #respond input#submit.alt:hover, .no-results .search-submit:hover,.woocommerce-page ul.products li.product .added_to_cart:hover, .woocommerce ul.products li.product .added_to_cart:hover, .woocommerce-js.woocommerce ul.products li.product .added_to_cart:hover',
 			  'property'  => 'border-color',
 			),						
 		),		

@@ -37,4 +37,4 @@ function munk_author_bio_cb(){
     }
 }
 endif;
-add_action( 'munk_author_bio', 'munk_author_bio_cb' );
+add_action( 'munk_single_post_entry_card', 'munk_author_bio_cb' );

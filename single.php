@@ -32,9 +32,7 @@ get_header();
 
                             get_template_part( 'template-parts/content', 'single' );                     
 							
-                            munk_entry_after();
-                            
-							do_action('munk_author_bio');
+                            munk_entry_after();                            
                             
 							munk_comments_before();
 							$ed_comments = get_theme_mod('ed_comments', true);
