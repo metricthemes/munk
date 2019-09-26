@@ -38,9 +38,9 @@ function munk_customize_typography_header( $config ) {
 	Kirki::add_field( 'munk', array(
 		'type'        => 'typography',
 		'settings'    => 'munk_typography_header_primary_title_ed',
-		'label'       => esc_html__('Site Title', 'munk'),
-		'section'     => 'munk_typography_header',
-		'priority'    => 20,
+		'label'       => esc_html__('Site Title Font', 'munk'),
+		'section'     => 'title_tagline',
+		'priority'    => 60,
 		'transport'   => 'auto',
 		'default'     => array(
 			'font-family'    => 'IBM Plex Sans',
@@ -60,9 +60,9 @@ function munk_customize_typography_header( $config ) {
 	Kirki::add_field( 'munk', array(
 		'type'        => 'typography',
 		'settings'    => 'munk_typography_header_primary_desc_ed',
-		'label'       => esc_html__('Site Description', 'munk'),
-		'section'     => 'munk_typography_header',
-		'priority'    => 20,
+		'label'       => esc_html__('Site Description Font', 'munk'),
+		'section'     => 'title_tagline',
+		'priority'    => 70,
 		'transport'   => 'auto',
 		'default'     => array(
 			'font-family'    => 'IBM Plex Sans',

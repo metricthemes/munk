@@ -558,3 +558,85 @@ color:#ffffff;
     max-width: none !important;
     margin: 0px calc(50% - 38vw);
 }
+
+/*--------------------------------------------------------------
+# Woocommerce Compat for Guternberg
+--------------------------------------------------------------*/
+.wc-block-grid__product {
+    text-align: left;
+	margin-bottom:35px;
+}
+.has-aligned-buttons .wc-block-grid__product .wp-block-button__link {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 20;
+    margin: 10px 0px !important;
+    font-weight: bold;
+    font-size: 14px;
+    transition: unset;
+    transform: unset;
+	border-radius:3px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    color: #272c30;
+	visibility: visible;
+}
+.wc-block-grid__product .wp-block-button__link {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: auto;
+    text-align: center;
+    z-index: 20;
+    margin: 10px 0px !important;
+    font-weight: bold;
+    font-size: 14px;
+    transition: unset;
+    transform: unset;
+	border-radius:3px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    color: #272c30;
+	visibility: visible;
+}
+
+.woocommerce-page ul.products li.product.fixedbutton:hover .button {
+    transform: unset;
+	visibility:visible;
+}
+.wc-block-grid__product-image img {
+    max-width: 100%;
+    object-fit: cover;
+}
+
+.wc-block-grid__product-price,
+.wc-block-grid__product-price span.amount,
+.woocommerce-page ul.products li.product .price,
+.woocommerce ul.products li.product .price {
+color:#101010;
+font-size:14px;
+}
+.wc-block-grid__product-price ins span.amount {
+font-weight:bold;
+}
+
+.wc-block-grid__product {
+    text-align: left;
+	list-style:none;
+}
+.wc-block-grid__product {
+margin-bottom:35px;
+}
+.wc-block-grid__product-onsale {
+border-radius: 100%;
+width: 50px;
+height: 50px;
+position: absolute;
+top: -2%;
+left: -5%;
+font-size: 14px !important;
+padding-top: 10px;
+}

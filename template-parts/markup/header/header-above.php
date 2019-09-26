@@ -14,7 +14,7 @@ function munk_header_above_markup() {
 		return;
 	}
 	if ($munk_header_above_ed == 'one-col') {
-		$munk_col_class = 'col-lg-12 col-xl-12 col-md-12 col-12 text-center';
+		$munk_col_class = 'col-lg-12 col-xl-12 col-md-12 col-12';
 	}
 	elseif ($munk_header_above_ed == 'two-col') {
 		$munk_col_class = 'col-lg-6 col-xl-6 col-md-12 col-12';
@@ -75,7 +75,7 @@ function munk_header_above_markup() {
 				<?php
 				if ($munk_header_above_ed == 'two-col') {
 				?>
-					<div class="<?php echo esc_attr($munk_col_class); ?> text-right">
+					<div class="<?php echo esc_attr($munk_col_class); ?>">
 		
 						<?php
 						// section two content

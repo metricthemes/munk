@@ -198,14 +198,28 @@ Kirki::add_field( 'munk', array(
 		'output'    => array(
 			array(
 			  'choice'    => 'background',
-			  'element'   => '.woocommerce span.onsale',
+			  'element'   => '.woocommerce span.onsale,.wc-block-grid__product-onsale',
 			  'property'  => 'background-color',
 			),						
 			array(
 			  'choice'    => 'content',
-			  'element'   => '.woocommerce span.onsale',
+			  'element'   => '.woocommerce span.onsale,.wc-block-grid__product-onsale',
 			  'property'  => 'color',
+			  'suffix' => '!important',
 			),
+			array(
+			  'choice'    => 'background',
+			  'element'   => '.woocommerce span.onsale,.wc-block-grid__product-onsale',
+			  'property'  => 'background-color',
+			  'context'  => array( 'editor' ),	
+			),						
+			array(
+			  'choice'    => 'content',
+			  'element'   => '.woocommerce span.onsale,.wc-block-grid__product-onsale',
+			  'property'  => 'color',
+			  'suffix' => '!important',
+			  'context'  => array( 'editor' ),	
+			),			
 		),		
 	) );		
 	

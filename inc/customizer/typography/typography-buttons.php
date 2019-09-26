@@ -23,14 +23,18 @@ function munk_typography_button_settings( $config ) {
 		'default'     => array(
 			'font-family'    => 'IBM Plex Sans',
 			'variant'        => 'regular',
-			'font-size'      => '15px',
+			'font-size'      => '17px',
 			'line-height'    => '1.6',
 			'text-transform' => 'none',
 		),
 		'output'    => array(
 			array(
-			  'element'   => '.navigation.pagination .nav-links a:hover,.navigation.pagination .nav-links .current, .no-results .search-submit, .woocommerce div.product .cart .single_add_to_cart_button, .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt,.wp-block-button__link,.is-style-outline .wp-block-button__link, .woocommerce-page ul.products li.product .button, .woocommerce ul.products li.product .button, .woocommerce-js.woocommerce ul.products li.product .button',
+			  'element'   => '.navigation.pagination .nav-links a:hover,.navigation.pagination .nav-links .current, .no-results .search-submit, .woocommerce div.product .cart .single_add_to_cart_button, .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt,.wp-block-button__link,.is-style-outline .wp-block-button__link, .woocommerce-page ul.products li.product .button, .woocommerce ul.products li.product .button, .woocommerce-js.woocommerce ul.products li.product .button, .wc-block-grid__product .wp-block-button__link, .has-aligned-buttons .wc-block-grid__product .wp-block-button__link, .woocommerce-page ul.products li.product.fixedbutton .button, .woocommerce ul.products li.product.fixedbutton .button, .woocommerce-js.woocommerce ul.products li.product.fixedbutton .button',
 			),
+			array(
+			  'element'   => '.navigation.pagination .nav-links a:hover,.navigation.pagination .nav-links .current, .no-results .search-submit, .woocommerce div.product .cart .single_add_to_cart_button, .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt,.wp-block-button__link,.is-style-outline .wp-block-button__link, .woocommerce-page ul.products li.product .button, .woocommerce ul.products li.product .button, .woocommerce-js.woocommerce ul.products li.product .button, .wc-block-grid__product .wp-block-button__link, .has-aligned-buttons .wc-block-grid__product .wp-block-button__link, .woocommerce-page ul.products li.product.fixedbutton .button, .woocommerce ul.products li.product.fixedbutton .button, .woocommerce-js.woocommerce ul.products li.product.fixedbutton .button',
+			  'context'  => array( 'editor' ),
+			),			
 		),		
 	) );	
 	
@@ -44,14 +48,18 @@ function munk_typography_button_settings( $config ) {
 		'default'     => array(
 			'font-family'    => 'IBM Plex Sans',
 			'variant'        => 'regular',
-			'font-size'      => '15px',
+			'font-size'      => '17px',
 			'line-height'    => '1.6',
 			'text-transform' => 'none',
 		),
 		'output'    => array(
 			array(
-			  'element'   => '.entry-card .read-more a, .widget_search .search-submit, .mt-header-ed .search-submit, .entry-content form input#submit, .entry-content a.button, .entry-content button.button, .entry-content input.button, .entry-content form button, #respond .form-submit #submit,#respond .form-submit #submit:hover, .woocommerce #respond input#submit.alt, .no-results .search-submit,.woocommerce-page ul.products li.product .added_to_cart, .woocommerce ul.products li.product .added_to_cart, .woocommerce-js.woocommerce ul.products li.product .added_to_cart',
+			  'element'   => '.entry-card .read-more a, .widget_search .search-submit, .mt-header-ed .search-submit, .entry-content form input#submit, .entry-content a.button, .entry-content button.button, .entry-content input.button, .entry-content form button, #respond .form-submit #submit,#respond .form-submit #submit:hover, .woocommerce #respond input#submit.alt, .no-results .search-submit,.woocommerce-page ul.products li.product .added_to_cart, .woocommerce ul.products li.product .added_to_cart, .woocommerce-js.woocommerce ul.products li.product .added_to_cart,.wc-block-grid__product .added_to_cart, .woocommerce a.button',
 			),
+			array(
+			  'element'   => '.entry-card .read-more a, .widget_search .search-submit, .mt-header-ed .search-submit, .entry-content form input#submit, .entry-content a.button, .entry-content button.button, .entry-content input.button, .entry-content form button, #respond .form-submit #submit,#respond .form-submit #submit:hover, .woocommerce #respond input#submit.alt, .no-results .search-submit,.woocommerce-page ul.products li.product .added_to_cart, .woocommerce ul.products li.product .added_to_cart, .woocommerce-js.woocommerce ul.products li.product .added_to_cart,.wc-block-grid__product .added_to_cart, .woocommerce a.button',
+			  'context'  => array( 'editor' ),
+			),			
 		),		
 	) );		
 	

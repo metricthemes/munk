@@ -13,7 +13,16 @@ if ( !defined( 'ABSPATH' ) )
 */
 if ( ! function_exists( 'munk_sidebar_manager' ) ) :
 function munk_sidebar_manager() {		
+
 		global $post;
+		
+		$munk_cpt_args = array(
+		   'public'   => true,
+		);
+		$munk_cpt_output = 'names';
+		$munk_cpt_operator = 'and';
+		$munk_cpt_types_raw = get_post_types( $munk_cpt_args, $munk_cpt_output, $munk_cpt_operator ); 		
+   	    $munk_cpt_types = array_diff($munk_cpt_types_raw, array("product", "page"));
 		
 		$classes = '';
 		$munk_side_order = '';
@@ -82,7 +91,7 @@ function munk_sidebar_manager() {
 			}
 			return array($classes, $munk_side_order, $munk_content_order);			
 		}					
-		elseif (is_singular(array( 'post', 'doc' ))) {					
+		elseif (is_singular( $munk_cpt_types )) {					
 			if ($single_sidebar_ed && $single_sidebar_ed != 'default') {										
 				if ($single_sidebar_ed == 'right-sidebar') {
 					$classes = 'right-sidebar';

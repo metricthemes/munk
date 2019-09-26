@@ -55,21 +55,25 @@ function munk_customize_layout_single_page ( $config ) {
 			  'choice'      => 'padding_top',
 			  'element'     => '.page #primary .entry-card',
 			  'property'    => 'padding-top',
+			  'media_query' => '@media (min-width: 1024px)'			  
 			),
 			array(
 			  'choice'      => 'padding_right',
 			  'element'     => '.page #primary .entry-card',
 			  'property'    => 'padding-right',
+			  'media_query' => '@media (min-width: 1024px)'			  
 			),
 			array(
 			  'choice'      => 'padding_bottom',
 			  'element'     => '.page #primary .entry-card',
 			  'property'    => 'padding-bottom',
+			  'media_query' => '@media (min-width: 1024px)'			  
 			),			
 			array(
 			  'choice'      => 'padding_left',
 			  'element'     => '.page #primary .entry-card',
 			  'property'    => 'padding-left',
+			  'media_query' => '@media (min-width: 1024px)'			  
 			),						
 		),				
 	) );
@@ -101,21 +105,25 @@ function munk_customize_layout_single_page ( $config ) {
 			  'choice'      => 'margin_top',
 			  'element'     => '.page #primary .entry-card',
 			  'property'    => 'margin-top',
+			  'media_query' => '@media (min-width: 1024px)'			  
 			),
 			array(
 			  'choice'      => 'margin_right',
 			  'element'     => '.page #primary .entry-card',
 			  'property'    => 'margin-right',
+			  'media_query' => '@media (min-width: 1024px)'			  
 			),
 			array(
 			  'choice'      => 'margin_bottom',
 			  'element'     => '.page #primary .entry-card',
 			  'property'    => 'margin-bottom',
+			  'media_query' => '@media (min-width: 1024px)'			  
 			),			
 			array(
 			  'choice'      => 'margin_left',
 			  'element'     => '.page #primary .entry-card',
 			  'property'    => 'margin-left',
+			  'media_query' => '@media (min-width: 1024px)'			  
 			),						
 		),				
 	) );	
