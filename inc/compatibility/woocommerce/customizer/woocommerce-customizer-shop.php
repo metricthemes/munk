@@ -56,21 +56,25 @@ function munk_customize_layout_woocommerce_shop( $config ) {
 			  'choice'      => 'padding_top',
 			  'element'     => '.woocommerce #primary .site-main',
 			  'property'    => 'padding-top',
+			  'media_query' => '@media (min-width: 1024px)',
 			),
 			array(
 			  'choice'      => 'padding_right',
 			  'element'     => '.woocommerce #primary .site-main',
 			  'property'    => 'padding-right',
+			  'media_query' => '@media (min-width: 1024px)',			  
 			),
 			array(
 			  'choice'      => 'padding_bottom',
 			  'element'     => '.woocommerce #primary .site-main',
 			  'property'    => 'padding-bottom',
+			  'media_query' => '@media (min-width: 1024px)',			  
 			),			
 			array(
 			  'choice'      => 'padding_left',
 			  'element'     => '.woocommerce #primary .site-main',
 			  'property'    => 'padding-left',
+			  'media_query' => '@media (min-width: 1024px)',			  
 			),						
 		),				
 	) );
@@ -102,21 +106,25 @@ function munk_customize_layout_woocommerce_shop( $config ) {
 			  'choice'      => 'margin_top',
 			  'element'     => '.woocommerce #primary .site-main',
 			  'property'    => 'margin-top',
+			  'media_query' => '@media (min-width: 1024px)',			  
 			),
 			array(
 			  'choice'      => 'margin_right',
 			  'element'     => '.woocommerce #primary .site-main',
 			  'property'    => 'margin-right',
+			  'media_query' => '@media (min-width: 1024px)',			  
 			),
 			array(
 			  'choice'      => 'margin_bottom',
 			  'element'     => '.woocommerce #primary .site-main',
 			  'property'    => 'margin-bottom',
+			  'media_query' => '@media (min-width: 1024px)',			  
 			),			
 			array(
 			  'choice'      => 'margin_left',
 			  'element'     => '.woocommerce #primary .site-main',
 			  'property'    => 'margin-left',
+			  'media_query' => '@media (min-width: 1024px)',			  
 			),						
 		),				
 	) );		

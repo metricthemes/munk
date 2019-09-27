@@ -12,206 +12,81 @@ if ( !defined( 'ABSPATH' ) )
 * @since 1.0.0
 */
 if ( ! function_exists( 'munk_sidebar_manager' ) ) :
-function munk_sidebar_manager() {		
 
-		global $post;
+function munk_sidebar_manager() {				
+
+		global $post;			
 		
-		$munk_cpt_args = array(
-		   'public'   => true,
-		);
-		$munk_cpt_output = 'names';
-		$munk_cpt_operator = 'and';
-		$munk_cpt_types_raw = get_post_types( $munk_cpt_args, $munk_cpt_output, $munk_cpt_operator ); 		
-   	    $munk_cpt_types = array_diff($munk_cpt_types_raw, array("product", "page"));
+		$layout_no_sidebar = array();
+		$layout_no_sidebar[0]= 'no-sidebar';
+		$layout_no_sidebar[1] = 'd-none';				
+		$layout_no_sidebar[2] = 'col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12';			
 		
-		$classes = '';
-		$munk_side_order = '';
-		$munk_content_order = '';
-		if($post) {
-			$single_sidebar_ed = get_post_meta( $post->ID, 'munk_settings_main_sidebar', true );
-		}
+		$layout_left_sidebar = array();
+		$layout_left_sidebar[0]= 'left-sidebar';
+		$layout_left_sidebar[1] = 'order-xl-1 order-lg-1 order-md-2 order-2';				
+		$layout_left_sidebar[2] = 'col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8 order-xl-2 order-lg-2 order-md-2 order-2';
+		
+		$layout_right_sidebar = array();
+		$layout_right_sidebar[0]= 'righ-sidebar';
+		$layout_right_sidebar[1] = 'order-xl-2 order-lg-2 order-md-2 order-2';
+		$layout_right_sidebar[2] = 'col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8 order-xl-1 order-lg-1 order-md-2 order-2';		
+		
+		$page_layout = $layout_right_sidebar;
+		
 		if ( is_home() || is_search() ) {
-		$munk_archive_ed = get_theme_mod('munk_layout_blog_archive_ed', 'right-sidebar');
+	
+			$munk_archive_ed = get_theme_mod('munk_layout_blog_archive_ed', 'right-sidebar');
 			if ($munk_archive_ed == 'right-sidebar') {
-				$classes = 'right-sidebar';
-				$munk_side_order = 'order-xl-2 order-lg-2 order-md-2 order-2';				
-				$munk_content_order = 'col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8 order-xl-1 order-lg-1 order-md-2 order-2';
+				$page_layout = $layout_right_sidebar;
 			}
 			if ($munk_archive_ed == 'left-sidebar') {
-				$classes = 'left-sidebar';
-				$munk_side_order = 'order-xl-1 order-lg-1 order-md-2 order-2';				
-				$munk_content_order = 'col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8 order-xl-2 order-lg-2 order-md-2 order-2';				
+				$page_layout = $layout_left_sidebar;
 			}
 			if ($munk_archive_ed == 'no-sidebar') {
-				$classes = 'no-sidebar';
-				$munk_side_order = 'd-none';				
-				$munk_content_order = 'col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12';
-			}
+				$page_layout = $layout_no_sidebar;
+			}			
 			
-			return array($classes, $munk_side_order, $munk_content_order);
-		}											
-		elseif ( is_archive() ) {					
-			if( is_category() || is_tag() || is_author() || is_date() ){ 				
-				$munk_archive_ed = get_theme_mod('munk_layout_blog_archive_ed', 'right-sidebar');				
-				if ($munk_archive_ed == 'right-sidebar') {
-					$classes = 'right-sidebar';
-					$munk_side_order = 'order-xl-2 order-lg-2 order-md-2 order-2';				
-					$munk_content_order = 'col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8 order-xl-1 order-lg-1 order-md-2 order-2';
+		}								
+		
+		if ( is_singular() ) {
+		
+				$post_type = get_post_type();		
+				$munk_meta_layout = get_post_meta( $post->ID, 'munk_settings_main_sidebar', true );			
+				$munk_single_global_ed = get_theme_mod('munk_layout_single_' .$post_type. '_ed', 'right-sidebar');				
+			
+				if ($munk_meta_layout && $munk_meta_layout != 'default') {
+				
+					if ($munk_meta_layout == 'right-sidebar') {
+						$page_layout = $layout_right_sidebar;
+					}
+					if ($munk_meta_layout == 'left-sidebar') {
+						$page_layout = $layout_left_sidebar;
+					}
+					if ($munk_meta_layout == 'no-sidebar') {
+						$page_layout = $layout_no_sidebar;
+					}					
+				
 				}
-				if ($munk_archive_ed == 'left-sidebar') {
-					$classes = 'left-sidebar';
-					$munk_side_order = 'order-xl-1 order-lg-1 order-md-2 order-2';									
-					$munk_content_order = 'col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8 order-xl-2 order-lg-2 order-md-2 order-2';				
+				else {
+				
+					if ($munk_single_global_ed == 'right-sidebar') {
+						$page_layout = $layout_right_sidebar;
+					}
+					if ($munk_single_global_ed == 'left-sidebar') {
+						$page_layout = $layout_left_sidebar;
+					}
+					if ($munk_single_global_ed == 'no-sidebar') {
+						$page_layout = $layout_no_sidebar;
+					}					
+				
 				}
-				if ($munk_archive_ed == 'no-sidebar') {
-					$classes = 'no-sidebar';
-					$munk_side_order = 'd-none';
-					$munk_content_order = 'col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12';
-				}
-				return array($classes, $munk_side_order, $munk_content_order);			
-			}			
-			elseif ( munk_is_woocommerce_activated() && ( is_shop() || is_product_category() || is_product_tag() ) ) {		
-				$munk_woo_ed = get_theme_mod('munk_customize_layout_woocommerce_ed', 'right-sidebar');
-				if ($munk_woo_ed == 'right-sidebar') {
-					$classes = 'right-sidebar';
-					$munk_side_order = 'order-xl-2 order-lg-2 order-md-2 order-2';	
-					$munk_content_order = 'col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8 order-xl-1 order-lg-1 order-md-2 order-2';
-				}
-				if ($munk_woo_ed == 'left-sidebar') {
-					$classes = 'left-sidebar';
-					$munk_side_order = 'order-xl-1 order-lg-1 order-md-2 order-2';
-					$munk_content_order = 'col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8 order-xl-2 order-lg-2 order-md-2 order-2';				
-				}
-				if ($munk_woo_ed == 'no-sidebar') {
-					$classes = 'no-sidebar';
-					$munk_side_order = 'd-none';
-					$munk_content_order = 'col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12';
-				}
-				return array($classes, $munk_side_order, $munk_content_order);
-			}
-			return array($classes, $munk_side_order, $munk_content_order);			
-		}					
-		elseif (is_singular( $munk_cpt_types )) {					
-			if ($single_sidebar_ed && $single_sidebar_ed != 'default') {										
-				if ($single_sidebar_ed == 'right-sidebar') {
-					$classes = 'right-sidebar';
-					$munk_side_order = 'order-xl-2 order-lg-2 order-md-2 order-2';	
-					$munk_content_order = 'col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8 order-xl-1 order-lg-1 order-md-2 order-2';
-				}
-				if ($single_sidebar_ed == 'left-sidebar') {
-					$classes = 'left-sidebar';
-					$munk_side_order = 'order-xl-1 order-lg-1 order-md-2 order-2';
-					$munk_content_order = 'col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8 order-xl-2 order-lg-2 order-md-2 order-2';				
-				}
-				if ($single_sidebar_ed == 'no-sidebar') {
-					$classes = 'no-sidebar';
-					$munk_side_order = 'd-none';
-					$munk_content_order = 'col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12';
-				}							
-				return array($classes, $munk_side_order, $munk_content_order);																				
-			}
-			else {								
-				$munk_post_ed = get_theme_mod('munk_layout_single_post_ed', 'right-sidebar');
-				if ($munk_post_ed == 'right-sidebar') {
-					$classes = 'right-sidebar';
-					$munk_side_order = 'order-xl-2 order-lg-2 order-md-2 order-2';	
-					$munk_content_order = 'col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8 order-xl-1 order-lg-1 order-md-2 order-2';
-				}
-				if ($munk_post_ed == 'left-sidebar') {
-					$classes = 'left-sidebar';
-					$munk_side_order = 'order-xl-1 order-lg-1 order-md-2 order-2';
-					$munk_content_order = 'col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8 order-xl-2 order-lg-2 order-md-2 order-2';				
-				}
-				if ($munk_post_ed == 'no-sidebar') {
-					$classes = 'no-sidebar';
-					$munk_side_order = 'd-none';
-					$munk_content_order = 'col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12';
-				}							
-					
-				return array( $classes, $munk_side_order, $munk_content_order);											
-			}												
-	        return array($classes, $munk_side_order, $munk_content_order);		
-		}
-		elseif ( munk_is_woocommerce_activated() && ( is_product() ) ) {								
-			if ($single_sidebar_ed && $single_sidebar_ed != 'default') {							
-				if ($single_sidebar_ed == 'right-sidebar') {
-					$classes = 'right-sidebar';
-					$munk_side_order = 'order-xl-2 order-lg-2 order-md-2 order-2';	
-					$munk_content_order = 'col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8 order-xl-1 order-lg-1 order-md-2 order-2';
-				}
-				if ($single_sidebar_ed == 'left-sidebar') {
-					$classes = 'left-sidebar';
-					$munk_side_order = 'order-xl-1 order-lg-1 order-md-2 order-2';
-					$munk_content_order = 'col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8 order-xl-2 order-lg-2 order-md-2 order-2';				
-				}
-				if ($single_sidebar_ed == 'no-sidebar') {
-					$classes = 'no-sidebar';
-					$munk_side_order = 'd-none';
-					$munk_content_order = 'col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12';
-				}							
-				return array($classes, $munk_side_order, $munk_content_order);																				
-			}
-			else {								
-				$munk_woo_single_ed = get_theme_mod('munk_customize_layout_wc_product_ed', 'right-sidebar');
-				if ($munk_woo_single_ed == 'right-sidebar') {
-					$classes = 'right-sidebar';
-					$munk_side_order = 'order-xl-2 order-lg-2 order-md-2 order-2';	
-					$munk_content_order = 'col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8 order-xl-1 order-lg-1 order-md-2 order-2';
-				}
-				if ($munk_woo_single_ed == 'left-sidebar') {
-					$classes = 'left-sidebar';
-					$munk_side_order = 'order-xl-1 order-lg-1 order-md-2 order-2';
-					$munk_content_order = 'col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8 order-xl-2 order-lg-2 order-md-2 order-2';				
-				}
-				if ($munk_woo_single_ed == 'no-sidebar') {
-					$classes = 'no-sidebar';
-					$munk_side_order = 'd-none';
-					$munk_content_order = 'col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12';
-				}							
-					
-				return array( $classes, $munk_side_order, $munk_content_order);											
-			}						
-		}											
-		elseif (is_page() ) {		
-			if ($single_sidebar_ed && $single_sidebar_ed != 'default') {							
-				if ($single_sidebar_ed == 'right-sidebar') {
-					$classes = 'right-sidebar';
-					$munk_side_order = 'order-xl-2 order-lg-2 order-md-2 order-2';	
-					$munk_content_order = 'col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8 order-xl-1 order-lg-1 order-md-2 order-2';
-				}
-				if ($single_sidebar_ed == 'left-sidebar') {
-					$classes = 'left-sidebar';
-					$munk_side_order = 'order-xl-1 order-lg-1 order-md-2 order-2';
-					$munk_content_order = 'col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8 order-xl-2 order-lg-2 order-md-2 order-2';				
-				}
-				if ($single_sidebar_ed == 'no-sidebar') {
-					$classes = 'no-sidebar';
-					$munk_side_order = 'd-none';
-					$munk_content_order = 'col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12';
-				}							
-				return array($classes, $munk_side_order, $munk_content_order);																				
-			}
-			else {								
-				$munk_page_ed = get_theme_mod('munk_customize_layout_single_page_ed', 'right-sidebar');
-				if ($munk_page_ed == 'right-sidebar') {
-					$classes = 'right-sidebar';
-					$munk_side_order = 'order-xl-2 order-lg-2 order-md-2 order-2';	
-					$munk_content_order = 'col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8 order-xl-1 order-lg-1 order-md-2 order-2';
-				}
-				if ($munk_page_ed == 'left-sidebar') {
-					$classes = 'left-sidebar';
-					$munk_side_order = 'order-xl-1 order-lg-1 order-md-2 order-2';
-					$munk_content_order = 'col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8 order-xl-2 order-lg-2 order-md-2 order-2';				
-				}
-				if ($munk_page_ed == 'no-sidebar') {
-					$classes = 'no-sidebar';
-					$munk_side_order = 'd-none';
-					$munk_content_order = 'col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12';
-				}												
-				return array( $classes, $munk_side_order, $munk_content_order);											
-			}			
+				
+		
 		}							
-        return array($classes, $munk_side_order, $munk_content_order);
+									
+		return apply_filters( 'munk_page_layout', $page_layout );
+		
 }
 endif;
 /*

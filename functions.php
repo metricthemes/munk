@@ -61,3 +61,5 @@
 		if(munk_is_elementor_activated()){
 			require get_template_directory() . '/inc/compatibility/class-munk-elementor.php';
 		}
+		
+		require get_template_directory() . '/inc/compatibility/wp-travel-engine/class-munk-wptravelengine.php';		

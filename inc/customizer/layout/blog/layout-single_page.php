@@ -16,7 +16,7 @@ function munk_customize_layout_single_page ( $config ) {
 		
 	Kirki::add_field( 'munk', array(
 		'type'        => 'radio-image',
-		'settings'    => 'munk_customize_layout_single_page_ed',
+		'settings'    => 'munk_layout_single_page_ed',
 		'label'       => esc_html__( 'Single Page Layout', 'munk' ),
 		'section'     => 'munk_customize_layout_single_page',
 		'default'     => 'right-sidebar',
@@ -55,7 +55,7 @@ function munk_customize_layout_single_page ( $config ) {
 			  'choice'      => 'padding_top',
 			  'element'     => '.page #primary .entry-card',
 			  'property'    => 'padding-top',
-			  'media_query' => '@media (min-width: 1024px)'			  
+			  'media_query' => '@media (min-width: 1024px)',			  
 			),
 			array(
 			  'choice'      => 'padding_right',

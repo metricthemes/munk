@@ -1063,7 +1063,7 @@ text-transform:uppercase;
 /*--------------------------------------------------------------
 # Media Query
 --------------------------------------------------------------*/
-@media (min-width: 320px) and (max-width: 478px) { 
+@media (min-width: 320px) and (max-width: 768px) { 
 	.woocommerce-page ul.products li.product .button,
 	.woocommerce ul.products li.product .button,
 	.woocommerce-js.woocommerce ul.products li.product .button {
@@ -1116,5 +1116,20 @@ text-transform:uppercase;
 	.wc-block-grid .wc-block-grid__product {
 		flex: 1 0 100% !important;	
 		max-width: 100% !important;
+	}	
+	.woocommerce.single-product #primary .site-main {
+		padding:0px;
+	}
+	.woocommerce #primary .site-main {
+		padding:0px;
+	}	
+}
+@media (min-width: 768px) and (max-width: 1024px) { 
+	.woocommerce.single-product #primary .site-main {
+		padding:0px;
+		padding-top:25px;
+	}
+	.woocommerce #primary .site-main {
+		padding:0px;
 	}	
 }
