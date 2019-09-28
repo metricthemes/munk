@@ -255,6 +255,9 @@ width:100%;
 background-color:#fff;
 padding:25px 45px;
 }
+.mt-content-padding-no .entry-card {
+padding:0px;
+}
 .entry-card .entry-title a, visited {
 font-size:25px;
 color:#000000;
@@ -290,6 +293,9 @@ margin-right: 5px;
 .entry-card .entry-content,
 .entry-card .entry-excerpt {
 margin:20px 0 0 0 ;
+}
+.mt-content-padding-no .entry-card .entry-content {
+margin:0;
 }
 .elementor-editor-active .entry-card .entry-content,
 .elementor-page .entry-card .entry-content {
@@ -819,7 +825,7 @@ padding:0px;
 font-size:14px;
 }
 .no-sidebar .entry-content .alignfull {
-	margin: 32px calc(50% - 50vw);
+	margin: 0px calc(50% - 50vw);
 	max-width: 100vw;
 	width: 100vw;
 }

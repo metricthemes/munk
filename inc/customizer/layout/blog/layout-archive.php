@@ -53,25 +53,25 @@ function munk_customize_layout_blog_archive ( $config ) {
 		'output'    => array(
 			array(
 			  'choice'      => 'padding_top',
-			  'element'     => '#primary .entry-card',
+			  'element'     => '.home #primary .entry-card, .blog #primary .entry-card, .archive #primary .entry-card',
 			  'property'    => 'padding-top',
 			  'media_query' => '@media (min-width: 1024px)'
 			),
 			array(
 			  'choice'      => 'padding_right',
-			  'element'     => '#primary .entry-card',
+			  'element'     => '.home #primary .entry-card, .blog #primary .entry-card, .archive #primary .entry-card',
 			  'property'    => 'padding-right',
 			  'media_query' => '@media (min-width: 1024px)'			  
 			),
 			array(
 			  'choice'      => 'padding_bottom',
-			  'element'     => '#primary .entry-card',
+			  'element'     => '.home #primary .entry-card, .blog #primary .entry-card, .archive #primary .entry-card',
 			  'property'    => 'padding-bottom',
 			  'media_query' => '@media (min-width: 1024px)'			  
 			),			
 			array(
 			  'choice'      => 'padding_left',
-			  'element'     => '#primary .entry-card',
+			  'element'     => '.home #primary .entry-card, .blog #primary .entry-card, .archive #primary .entry-card',
 			  'property'    => 'padding-left',
 			  'media_query' => '@media (min-width: 1024px)'			  
 			),						
@@ -103,25 +103,25 @@ function munk_customize_layout_blog_archive ( $config ) {
 		'output'    => array(
 			array(
 			  'choice'      => 'margin_top',
-			  'element'     => '#primary .entry-card',
+			  'element'     => '.home #primary .entry-card, .blog #primary .entry-card, .archive #primary .entry-card',
 			  'property'    => 'margin-top',
 			  'media_query' => '@media (min-width: 1024px)'			  
 			),
 			array(
 			  'choice'      => 'margin_right',
-			  'element'     => '#primary .entry-card',
+			  'element'     => '.home #primary .entry-card, .blog #primary .entry-card, .archive #primary .entry-card',
 			  'property'    => 'margin-right',
 			  'media_query' => '@media (min-width: 1024px)'			  
 			),
 			array(
 			  'choice'      => 'margin_bottom',
-			  'element'     => '#primary .entry-card',
+			  'element'     => '.home #primary .entry-card, .blog #primary .entry-card, .archive #primary .entry-card',
 			  'property'    => 'margin-bottom',
 			  'media_query' => '@media (min-width: 1024px)'			  
 			),			
 			array(
 			  'choice'      => 'margin_left',
-			  'element'     => '#primary .entry-card',
+			  'element'     => '.home #primary .entry-card, .blog #primary .entry-card, .archive #primary .entry-card',
 			  'property'    => 'margin-left',
 			  'media_query' => '@media (min-width: 1024px)'			  
 			),						

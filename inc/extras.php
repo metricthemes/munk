@@ -23,22 +23,33 @@ function munk_body_container_class($classes) {
 		// if single post type then do this
 		if (is_singular()) {
 			$munk_single_container_ed = get_post_meta( $post->ID, 'munk_settings_page_container', true );
+			
+			$munk_single_content_padding = get_post_meta( $post->ID, 'munk_settings_disable_content_padding', true );
+			if ($munk_single_content_padding) {
+				$classes[] = 'mt-content-padding-no';
+			}
+			else {
+				$classes[] = 'mt-content-padding-yes';			
+			}
+
+			
 			if ($munk_single_container_ed && $munk_single_container_ed != 'default') {
 				$classes[] = 'mt-container-' . $munk_single_container_ed;
-				return $classes;
+
 			}
 			else {
 				$munk_site_container_ed = get_theme_mod('munk_layout_container_default_ed', 'default');		
 				$classes[] = 'mt-container-' . $munk_site_container_ed;						
-				return $classes;
 			}
 		}
+		
 		//if any archive or home type then do this
 		else {
 			$munk_site_container_ed = get_theme_mod('munk_layout_container_default_ed', 'default');		
 			$classes[] = 'mt-container-' . $munk_site_container_ed;						
-			return $classes;				
-		}	
+		}			
+		
+		return $classes;
 		
 }
 endif;

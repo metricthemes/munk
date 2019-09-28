@@ -74,7 +74,11 @@ function munk_settings_html( $post) {
         </p>	        
         <p>
 		<input type="checkbox" name="munk_settings_disable_footer_area" id="munk_settings_disable_footer_area" value="disable-footer-area" <?php echo ( munk_settings_get_meta( 'munk_settings_disable_footer_area' ) === 'disable-footer-area' ) ? 'checked' : ''; ?>>
-		<label for="munk_settings_disable_footer_area"><?php esc_html_e( 'Disable Footer Area', 'munk' ); ?></label></p><?php
+		<label for="munk_settings_disable_footer_area"><?php esc_html_e( 'Disable Footer Area', 'munk' ); ?></label></p>
+        <p>
+		<input type="checkbox" name="munk_settings_disable_content_padding" id="munk_settings_disable_content_padding" value="disable-content-padding" <?php echo ( munk_settings_get_meta( 'munk_settings_disable_content_padding' ) === 'disable-content-padding' ) ? 'checked' : ''; ?>>
+		<label for="munk_settings_disable_content_padding"><?php esc_html_e( 'Disable Content Padding', 'munk' ); ?></label></p>        
+		<?php
 }
 
 function munk_settings_save( $post_id ) {
@@ -98,5 +102,9 @@ function munk_settings_save( $post_id ) {
 		update_post_meta( $post_id, 'munk_settings_disable_footer_area', esc_html( $_POST['munk_settings_disable_footer_area'] ) ); // phpcs:ignore
 	else
 		update_post_meta( $post_id, 'munk_settings_disable_footer_area', null );
+	if ( isset( $_POST['munk_settings_disable_content_padding'] ) )
+		update_post_meta( $post_id, 'munk_settings_disable_content_padding', esc_html( $_POST['munk_settings_disable_content_padding'] ) ); // phpcs:ignore
+	else
+		update_post_meta( $post_id, 'munk_settings_disable_content_padding', null );		
 }
 add_action( 'save_post', 'munk_settings_save' );

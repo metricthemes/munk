@@ -4,7 +4,7 @@
 /*--------------------------------------------------------------
 # General Woocommerce Styling
 --------------------------------------------------------------*/
-.woocommerce.single-product #primary .site-main {
+.woocommerce.single-product.mt-content-padding-yes #primary .site-main {
 margin:0px;
 padding:45px;
 background-color:#ffffff;
