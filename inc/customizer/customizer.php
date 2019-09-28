@@ -87,7 +87,7 @@ function munk_theme_panel($config) {
      * Colors Panel
      */
     Kirki::add_panel('munk_colors_panel', array(
-        'title' =>  esc_html__( 'Color Scheme', 'munk' ),
+        'title' =>  esc_html__( 'Colors', 'munk' ),
         'description'   =>  esc_html__( 'Panel for the Theme Color Customization', 'munk' ),
         'priority' => 10,		
     ));	
@@ -96,7 +96,7 @@ function munk_theme_panel($config) {
      * Typography Panel
      */
     Kirki::add_panel('munk_typography_panel', array(
-        'title' =>  esc_html__( 'Typography Settings', 'munk' ),
+        'title' =>  esc_html__( 'Typography', 'munk' ),
         'description'   =>  esc_html__( 'Panel for the Theme Font/Typography', 'munk' ),
         'priority' => 15,		
     ));		
@@ -105,7 +105,7 @@ function munk_theme_panel($config) {
      * Layouts Panel
      */
     Kirki::add_panel('munk_layout_panel', array(
-        'title' =>  esc_html__( 'Layout Settings', 'munk' ),
+        'title' =>  esc_html__( 'Site Layout', 'munk' ),
         'description'   =>  esc_html__( 'Panel for the Theme Layout Customization', 'munk' ),
         'priority' => 20,		
     ));	

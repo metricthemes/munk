@@ -50,16 +50,11 @@
 		require get_template_directory() . '/inc/kirki-class/class-munk-kirki.php'; // Kirki Fallback
 		require get_template_directory() . '/inc/customizer/customizer.php'; // Customizer Options
 		require get_template_directory() . '/inc/compatibility/elementor-header-footer.php'; // Elementor Header Footer Builder		
-
 		// Woocommerce Support
 		if(munk_is_woocommerce_activated()){
 			require get_template_directory() . '/inc/compatibility/woocommerce/class-munk-woocommerce.php';
-		}		
-		
-    	 // Elementor Support
-		
+		}				
+    	 // Elementor Support		
 		if(munk_is_elementor_activated()){
 			require get_template_directory() . '/inc/compatibility/class-munk-elementor.php';
-		}
-		
-		require get_template_directory() . '/inc/compatibility/wp-travel-engine/class-munk-wptravelengine.php';		
+		}	

@@ -34,7 +34,7 @@ function munk_sidebar_manager() {
 		
 		$page_layout = $layout_right_sidebar;
 		
-		if ( is_home() || is_search() ) {
+		if ( is_home() || is_search() || is_archive() ) {
 	
 			$munk_archive_ed = get_theme_mod('munk_layout_blog_archive_ed', 'right-sidebar');
 			if ($munk_archive_ed == 'right-sidebar') {

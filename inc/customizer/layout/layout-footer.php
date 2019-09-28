@@ -7,7 +7,7 @@
 function munk_customize_layout_footer( $config ) {
 
     Kirki::add_section( 'munk_layout_footer', array(
-        'priority'   => 10,
+        'priority'   => 30,
         'capability' => 'edit_theme_options',
         'title'      => esc_html__( 'Footer', 'munk' ),
         'panel' 	 =>  'munk_layout_panel',
