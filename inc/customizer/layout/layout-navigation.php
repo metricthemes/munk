@@ -1,24 +1,24 @@
 <?php
 /**
- * Navigation Color Settings
+ * Layout Site Header - Main Navigation
  *
  */
- 
-function munk_customize_color_navigation( $config ) {
 
-    Kirki::add_section( 'munk_color_navigation', array(
-        'priority'   => 14,
+function munk_customize_layout_site_navigation ( $config ) {
+
+
+    Kirki::add_section( 'munk_layout_site_navigation', array(
+        'priority'   => 11,
         'capability' => 'edit_theme_options',
         'title'      => esc_html__( 'Main Navigation', 'munk' ),
-        'panel' =>  'munk_colors_panel'
-    ) );    
-	
+    ) );
+
 	Kirki::add_field( 'munk', array(
 		'type'        => 'custom',
         'settings'    => 'munk_color_main_nav_label',
 		'label'       => '',
-        'section'     => 'munk_color_navigation',
-		'default'     => '<div style="color: #191919;font-weight:600;font-size: 13px;border: 1px solid #d5d0d0;padding: 5px 15px;background-color: #fff;text-transform: uppercase;margin-left: -12px;margin-right: -14px;">' . esc_html__( 'Main Navigation', 'munk' ) . '</div>',
+        'section'     => 'munk_layout_site_navigation',
+		'default'     => '<div style="color: #191919;font-weight:600;font-size: 13px;border: 1px solid #d5d0d0;padding: 5px 15px;background-color: #fff;text-transform: uppercase;margin-left: -12px;margin-right: -14px;">' . esc_html__( 'Color Settings', 'munk' ) . '</div>',
 		'priority'    => '5',
 	) );	
 	
@@ -27,7 +27,7 @@ function munk_customize_color_navigation( $config ) {
 		'type'        => 'multicolor',
 		'settings'    => 'munk_color_main_nav_ed',
 		'label'       => '',
-		'section'     => 'munk_color_navigation',
+		'section'     => 'munk_layout_site_navigation',
 		'priority'    => 10,
 		'transport'   => 'auto',
 		'choices'     => array(
@@ -63,7 +63,7 @@ function munk_customize_color_navigation( $config ) {
 		'type'        => 'custom',
         'settings'    => 'munk_color_main_nav_submenu_label',
 		'label'       => '',
-        'section'     => 'munk_color_navigation',
+        'section'     => 'munk_layout_site_navigation',
 		'default'     => '<div style="color: #191919;font-weight:600;font-size: 13px;border: 1px solid #d5d0d0;padding: 5px 15px;background-color: #fff;text-transform: uppercase;margin-left: -12px;margin-right: -14px;">' . esc_html__( 'Main Navigation Dropdown', 'munk' ) . '</div>',
 		'priority'    => '15',
 	) );		
@@ -72,7 +72,7 @@ function munk_customize_color_navigation( $config ) {
 		'type'        => 'multicolor',
 		'settings'    => 'munk_color_main_nav_submenu',
 		'label'       => '',
-		'section'     => 'munk_color_navigation',
+		'section'     => 'munk_layout_site_navigation',
 		'priority'    => 20,
 		'transport'   => 'auto',
 		'choices'     => array(
@@ -108,7 +108,7 @@ function munk_customize_color_navigation( $config ) {
 		'type'        => 'custom',
         'settings'    => 'munk_color_main_nav_toggle_label',
 		'label'       => '',
-        'section'     => 'munk_color_navigation',
+        'section'     => 'munk_layout_site_navigation',
 		'default'     => '<div style="color: #191919;font-weight:600;font-size: 13px;border: 1px solid #d5d0d0;padding: 5px 15px;background-color: #fff;text-transform: uppercase;margin-left: -12px;margin-right: -14px;">' . esc_html__( 'Mobile Menu', 'munk' ) . '</div>',
 		'priority'    => '30',
 	) );	
@@ -117,7 +117,7 @@ function munk_customize_color_navigation( $config ) {
 		'type'        => 'multicolor',
 		'settings'    => 'munk_color_main_nav_toggle',
 		'label'       => '',
-		'section'     => 'munk_color_navigation',
+		'section'     => 'munk_layout_site_navigation',
 		'priority'    => 35,
 		'transport'   => 'auto',
 		'choices'     => array(
@@ -140,8 +140,38 @@ function munk_customize_color_navigation( $config ) {
 			  'property'  => 'color',
 			),
 		),		
+	) );			
+	
+	Kirki::add_field( 'munk', array(
+		'type'        => 'custom',
+        'settings'    => 'munk_typography_main_nav_toggle_label',
+		'label'       => '',
+        'section'     => 'munk_layout_site_navigation',
+		'default'     => '<div style="color: #191919;font-weight:600;font-size: 13px;border: 1px solid #d5d0d0;padding: 5px 15px;background-color: #fff;text-transform: uppercase;margin-left: -12px;margin-right: -14px;">' . esc_html__( 'Typography Menu', 'munk' ) . '</div>',
+		'priority'    => '40',
 	) );		
 	
+	Kirki::add_field( 'munk', array(
+		'type'        => 'typography',
+		'settings'    => 'munk_typography_main_nav_ed',
+		'label'       => esc_html__('Main Navigation', 'munk'),
+		'section'     => 'munk_layout_site_navigation',
+		'priority'    => 45,
+		'transport'   => 'auto',
+		'default'     => array(
+			'font-family'    => 'IBM Plex Sans',
+			'variant'        => 'regular',
+			'font-size'      => '15px',
+			'line-height'    => '1.6',
+			'text-transform' => 'none',
+		),
+		'output'    => array(
+			array(
+			  'element'   => '.site-header .navbar, .navbar .navbar-nav .nav-link, .site-header .dropdown-menu .dropdown-item',
+			),
+		),		
+	) );		
+			
 
 }
-//add_action( 'kirki_config', 'munk_customize_color_navigation' );
+add_action( 'kirki_config', 'munk_customize_layout_site_navigation' );

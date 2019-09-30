@@ -190,6 +190,58 @@ Kirki::add_field( 'munk', array(
 			),
 		),		
 	) );	
+	
+Kirki::add_field( 'munk', array(
+		'type'        => 'custom',
+        'settings'    => 'munk_color_header_primary',
+		'label'       => '',
+        'section'     => 'munk_layout_site_header_primary',
+		'default'     => '<div style="color: #191919;font-weight:600;font-size: 13px;border: 1px solid #d5d0d0;padding: 5px 15px;background-color: #fff;text-transform: uppercase;margin-left: -12px;margin-right: -14px;">' . esc_html__( 'Color Settings', 'munk' ) . '</div>',
+		'priority'    => '60',
+	) );	
+	
+	Kirki::add_field( 'munk', array(
+		'type'        => 'multicolor',
+		'settings'    => 'munk_color_header_primary_ed',
+		'label'       => '',
+		'section'     => 'munk_layout_site_header_primary',
+		'priority'    => 65,
+		'transport'   => 'auto',
+		'choices'     => array(
+			'bgcolor-header' => esc_html__( 'Background Color', 'munk' ),
+			'text'    => esc_html__( 'Text Color', 'munk' ),
+			'link'    => esc_html__( 'Link  Color', 'munk' ),
+			'hover'   => esc_html__( 'Hover  Color', 'munk' ),
+		),
+		'default'     => array(
+			'bgcolor-header' => '#FFFFFF',
+			'text'    => '#101010',
+			'link'    => '#101010',
+			'hover'   => '#101010',
+		),
+		'output'    => array(
+			array(
+			  'choice'    => 'bgcolor-header',
+			  'element'   => '.site-header',
+			  'property'  => 'background-color',
+			),
+			array(
+			  'choice'    => 'text',
+			  'element'   => '.site-header, .site-header .site-branding p',
+			  'property'  => 'color',
+			),			
+			array(
+			  'choice'    => 'link',
+			  'element'   => '.site-header .site-branding h1 a',
+			  'property'  => 'color',
+			),
+			array(
+			  'choice'    => 'hover',
+			  'element'   => '.site-header .site-branding h1 a:hover',
+			  'property'  => 'color',
+			),			
+		),		
+	) );			
 
 }
 add_action( 'kirki_config', 'munk_customize_layout_site_header_primary' );

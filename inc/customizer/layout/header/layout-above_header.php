@@ -256,9 +256,97 @@ function munk_customize_layout_site_header_above ( $config ) {
 			),		
 		) );		
 		// Above Section 2 Ends	
+		
+		
+		// Color Settings
+		
+		Kirki::add_field( 'munk', array(
+				'type'        => 'custom',
+				'settings'    => 'munk_color_header_above_label',
+				'label'       => '',
+				'section'     => 'munk_layout_site_header_above',
+				'default'     => '<div style="color: #191919;font-weight:600;font-size: 13px;border: 1px solid #d5d0d0;padding: 5px 15px;background-color: #fff;text-transform: uppercase;margin-left: -12px;margin-right: -14px;">' . esc_html__( 'Color Settings', 'munk' ) . '</div>',
+				'priority'    => '50',
+			) );	
+		
+			
+			Kirki::add_field( 'munk',  array(
+				'type'        => 'multicolor',
+				'settings'    => 'munk_color_header_above_ed',
+				'label'       => '',
+				'section'     => 'munk_layout_site_header_above',
+				'priority'    => 55,
+				'transport'   => 'auto',
+				'choices'     => array(
+					'bgcolor' => esc_html__( 'Background Color', 'munk' ),
+					'text'    => esc_html__( 'Text Color', 'munk' ),
+					'link'    => esc_html__( 'Link  Color', 'munk' ),
+					'hover'   => esc_html__( 'Hover  Color', 'munk' ),
+				),
+				'default'     => array(
+					'bgcolor' => '#f5f6f7',
+					'text'    => '#101010',
+					'link'    => '#101010',
+					'hover'   => MUNK_ACCENT_COLOR,
+				),
+				'output'    => array(
+					array(
+					  'choice'    => 'bgcolor',
+					  'element'   => '.header-above',
+					  'property'  => 'background-color',
+					),
+					array(
+					  'choice'    => 'text',
+					  'element'   => '.header-above',
+					  'property'  => 'color',
+					),			
+					array(
+					  'choice'    => 'link',
+					  'element'   => '.header-above a, .header-above ul.mt-header-ed-menu li a',
+					  'property'  => 'color',
+					),
+					array(
+					  'choice'    => 'hover',
+					  'element'   => '.header-above a:hover',
+					  'property'  => 'color',
+					),			
+				),		
+			) );	
+		
 	
+			// Font Settings
+			
+			Kirki::add_field( 'munk', array(
+					'type'        => 'custom',
+					'settings'    => 'munk_typography_header_above_label',
+					'label'       => '',
+					'section'     => 'munk_layout_site_header_above',
+					'default'     => '<div style="color: #191919;font-weight:600;font-size: 13px;border: 1px solid #d5d0d0;padding: 5px 15px;background-color: #fff;text-transform: uppercase;margin-left: -12px;margin-right: -14px;">' . esc_html__( 'Typography Settings', 'munk' ) . '</div>',
+					'priority'    => '60',
+				) );				
 	
-	
+			
+			Kirki::add_field( 'munk', array(
+				'type'        => 'typography',
+				'settings'    => 'munk_typography_header_above_ed',
+				'label'       => esc_html__('Above Header Section', 'munk'),		
+				'section'     => 'munk_layout_site_header_above',
+				'priority'    => 65,
+				'transport'   => 'auto',
+				'default'     => array(
+					'font-family'    => 'IBM Plex Sans',
+					'variant'        => 'regular',
+					'font-size'      => '14px',
+					'line-height'    => '1.6',
+					'text-transform' => 'none',
+					'text-align'     => 'left',		
+				),
+				'output'    => array(
+					array(
+					  'element'   => '.header-above, .header-above a, .header-above ul.mt-header-ed-menu li a',
+					),
+				),		
+			) );		
 	
 	
 

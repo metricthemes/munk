@@ -4,20 +4,20 @@
  *
  */
  
-function munk_customize_typography_general( $config ) {
+function munk_customize_typography_content( $config ) {
 
-    Kirki::add_section( 'munk_typography_general_settings', array(
+    Kirki::add_section( 'munk_typography_content_settings', array(
         'priority'   => 14,
         'capability' => 'edit_theme_options',
-        'title'      => esc_html__( 'Content', 'munk' ),
-        'panel' =>  'munk_typography_panel'
+        'title'      => esc_html__( 'Typography Settings', 'munk' ),
+        'panel' =>  'munk_layouts_blog'
     ) );    					
 	
 	Kirki::add_field( 'munk', array(
 		'type'        => 'typography',
 		'settings'    => 'munk_typography_general_content',
 		'label'       => esc_html__('Content Font', 'munk'),		
-		'section'     => 'munk_typography_general_settings',
+		'section'     => 'munk_typography_content_settings',
 		'priority'    => 10,
 		'transport'   => 'auto',
 		'default'     => array(
@@ -39,7 +39,7 @@ function munk_customize_typography_general( $config ) {
 		'type'        => 'typography',
 		'settings'    => 'munk_typography_general_post_title',
 		'label'       => esc_html__('Post/Page Title', 'munk'),		
-		'section'     => 'munk_typography_general_settings',
+		'section'     => 'munk_typography_content_settings',
 		'priority'    => 10,
 		'transport'   => 'auto',
 		'default'     => array(
@@ -64,7 +64,7 @@ function munk_customize_typography_general( $config ) {
 		'type'        => 'typography',
 		'settings'    => 'munk_typography_general_post_content',
 		'label'       => esc_html__('Post/Page Content', 'munk'),		
-		'section'     => 'munk_typography_general_settings',
+		'section'     => 'munk_typography_content_settings',
 		'priority'    => 10,
 		'transport'   => 'auto',
 		'default'     => array(
@@ -92,7 +92,7 @@ function munk_customize_typography_general( $config ) {
 		'type'        => 'typography',
 		'settings'    => 'munk_typography_general_post_meta',
 		'label'       => esc_html__('Post Meta', 'munk'),		
-		'section'     => 'munk_typography_general_settings',
+		'section'     => 'munk_typography_content_settings',
 		'priority'    => 10,
 		'transport'   => 'auto',
 		'default'     => array(
@@ -108,4 +108,4 @@ function munk_customize_typography_general( $config ) {
 	) );			
 
 }
-//add_action( 'kirki_config', 'munk_customize_typography_general' );
+add_action( 'kirki_config', 'munk_customize_typography_content' );

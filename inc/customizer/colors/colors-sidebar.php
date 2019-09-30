@@ -74,4 +74,4 @@ function munk_color_sidebar_settings( $config ) {
 	) );			
 
 }
-add_action( 'kirki_config', 'munk_color_sidebar_settings' );
+//add_action( 'kirki_config', 'munk_color_sidebar_settings' );

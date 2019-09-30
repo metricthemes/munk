@@ -7,10 +7,9 @@
 function munk_customize_layout_site_container ( $config ) {
 
     Kirki::add_section( 'munk_layout_container', array(
-        'priority'   => 40,
+        'priority'   => 16,
         'capability' => 'edit_theme_options',
         'title'      => esc_html__( 'Site Container', 'munk' ),
-        'panel' 	 =>  'munk_layout_panel',
     ) );			
 	
 	// site container

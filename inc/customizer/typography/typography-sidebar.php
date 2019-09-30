@@ -70,4 +70,4 @@ function munk_typography_sidebar_settings( $config ) {
 	) );			
 
 }
-add_action( 'kirki_config', 'munk_typography_sidebar_settings' );
+//add_action( 'kirki_config', 'munk_typography_sidebar_settings' );

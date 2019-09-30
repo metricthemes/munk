@@ -1,24 +1,25 @@
 <?php
 /**
- * General Content Color Settings
+ * Layout Blog Archive
  *
  */
- 
-function munk_customize_color_general( $config ) {
 
-    Kirki::add_section( 'munk_color_general_settings', array(
-        'priority'   => 14,
+function munk_customize_layout_content_color ( $config ) {
+
+
+    Kirki::add_section( 'munk_layout_content_color', array(
+        'priority'   => 10,
         'capability' => 'edit_theme_options',
-        'title'      => esc_html__( 'Content', 'munk' ),
-        'panel' =>  'munk_colors_panel'
-    ) );    
-		
+        'title'      => esc_html__( 'Color Settings', 'munk' ),
+        'panel' =>  'munk_layouts_blog',
+    ) );	
+	
 	Kirki::add_field( 'munk', array(
         'type'        => 'color',
         'settings'    => 'munk_color_general_bgcolor',
         'label'       => esc_html__( 'Background Color', 'munk' ),
         'description' => esc_html__( 'Applies to primary content area', 'munk' ),		
-        'section'     => 'munk_color_general_settings',
+        'section'     => 'munk_layout_content_color',
 		'default'     => '#ffffff',		
         'priority'    => 5,
 		'transport'   => 'auto',
@@ -34,7 +35,7 @@ function munk_customize_color_general( $config ) {
         'type'        => 'color',
         'settings'    => 'munk_color_general_title_color',
         'label'       => esc_html__( 'Post/Page Title', 'munk' ),
-        'section'     => 'munk_color_general_settings',
+        'section'     => 'munk_layout_content_color',
 		'default'     => '#212529',		
         'priority'    => 15,
 		'transport'   => 'auto',
@@ -55,7 +56,7 @@ function munk_customize_color_general( $config ) {
         'type'        => 'color',
         'settings'    => 'munk_color_general_text_color',
         'label'       => esc_html__( 'Post/Page Content', 'munk' ),
-        'section'     => 'munk_color_general_settings',
+        'section'     => 'munk_layout_content_color',
 		'default'     => '#212529',		
         'priority'    => 15,
 		'transport'   => 'auto',
@@ -76,7 +77,7 @@ function munk_customize_color_general( $config ) {
         'type'        => 'color',
         'settings'    => 'munk_color_general_link_color',
         'label'       => esc_html__( 'Content Link', 'munk' ),
-        'section'     => 'munk_color_general_settings',
+        'section'     => 'munk_layout_content_color',
 		'default'     => '#212529',		
         'priority'    => 15,
 		'transport'   => 'auto',
@@ -97,7 +98,7 @@ function munk_customize_color_general( $config ) {
         'type'        => 'color',
         'settings'    => 'munk_color_general_link_hover',
         'label'       => esc_html__( 'Content Link Hover', 'munk' ),
-        'section'     => 'munk_color_general_settings',
+        'section'     => 'munk_layout_content_color',
 		'default'     => '#212529',		
         'priority'    => 15,
 		'transport'   => 'auto',
@@ -118,7 +119,7 @@ function munk_customize_color_general( $config ) {
         'type'        => 'color',
         'settings'    => 'munk_color_general_post_meta',
         'label'       => esc_html__( 'Post Meta', 'munk' ),
-        'section'     => 'munk_color_general_settings',
+        'section'     => 'munk_layout_content_color',
 		'default'     => '#212529',		
         'priority'    => 15,
 		'transport'   => 'auto',
@@ -128,7 +129,8 @@ function munk_customize_color_general( $config ) {
 				'property' => 'color',
 			),
 		),		
-	));							
+	));				
+	
 
 }
-//add_action( 'kirki_config', 'munk_customize_color_general' );
+add_action( 'kirki_config', 'munk_customize_layout_content_color' );

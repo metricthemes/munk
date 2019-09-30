@@ -22,6 +22,7 @@ define ( 'MUNK_ACCENT_COLOR', '#0161bd' ); // defined primary color
  * Basic customizations
  */
 function munk_default_customize($wp_customize) {
+
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
@@ -35,10 +36,8 @@ function munk_default_customize($wp_customize) {
 			'selector'        => '.site-description',
 			'render_callback' => 'munk_customize_partial_blogdescription',
 		) );
-}
+	}
 	
-	$wp_customize->remove_section( 'colors' );
-
 	/**
 	 * Render the site title for the selective refresh partial.
 	 *
@@ -57,6 +56,12 @@ function munk_default_customize($wp_customize) {
 	function munk_customize_partial_blogdescription() {
 		bloginfo( 'description' );
 	}
+	
+	$wp_customize->get_section ('title_tagline')->panel = 'munk_layouts_header';	
+	$wp_customize->get_section('title_tagline')->priority = 5;
+	
+	$wp_customize->get_section ('header_image')->panel = 'munk_layouts_header';	
+	$wp_customize->get_section('header_image')->priority = 50;	
 	
 }
 add_action( 'customize_register', 'munk_default_customize', 10 );
@@ -81,25 +86,7 @@ function munk_menu_ed() {
 		return $menu_options;
 }
 
-function munk_theme_panel($config) {
-	 	
-    /**
-     * Colors Panel
-     */
-    Kirki::add_panel('munk_colors_panel', array(
-        'title' =>  esc_html__( 'Colors', 'munk' ),
-        'description'   =>  esc_html__( 'Panel for the Theme Color Customization', 'munk' ),
-        'priority' => 10,		
-    ));	
-	
-    /**
-     * Typography Panel
-     */
-    Kirki::add_panel('munk_typography_panel', array(
-        'title' =>  esc_html__( 'Typography', 'munk' ),
-        'description'   =>  esc_html__( 'Panel for the Theme Font/Typography', 'munk' ),
-        'priority' => 15,		
-    ));		
+function munk_theme_panel($config) {	 	
 
     /**
      * Layouts Panel
@@ -130,12 +117,13 @@ add_action( 'customize_controls_enqueue_scripts', 'munk_customize_script' );
 /**
  * Customizer Sections
 */
-$munk_layout_sections = array( 'blog',	'container', 'footer', 'header' );
+$munk_layout_sections = array( 'header', 'navigation', 'blog', 'sidebar', 'footer', 'buttons', 'container' );
 foreach( $munk_layout_sections as $munk_section ) {
  get_template_part('inc/customizer/layout/layout', $munk_section);
 }
 
-$munk_color_sections = array( 'header', 'navigation', 'general', 'footer', 'sidebar', 'buttons' );
+/*
+$munk_color_sections = array( 'header', 'general', 'footer', 'sidebar', 'buttons' );
 foreach( $munk_color_sections as $munk_section ) {
  get_template_part('inc/customizer/colors/colors', $munk_section);
 }
@@ -144,8 +132,9 @@ $munk_typography_sections = array( 'header', 'navigation', 'general', 'sidebar',
 foreach( $munk_typography_sections as $munk_section ) {
  get_template_part('inc/customizer/typography/typography', $munk_section);
 }
+*/
 
-$munk_blog_layout_sections = array( 'archive', 'single_post', 'single_page' );
+$munk_blog_layout_sections = array( 'archive', 'single_post', 'single_page', 'content_color', 'content_typography' );
 foreach( $munk_blog_layout_sections as $munk_section ) {
  get_template_part('inc/customizer/layout/blog/layout', $munk_section);
 }

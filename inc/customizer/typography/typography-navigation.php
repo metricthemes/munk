@@ -36,4 +36,4 @@ function munk_customize_typography_navigation( $config ) {
 	) );										
 
 }
-add_action( 'kirki_config', 'munk_customize_typography_navigation' );
+//add_action( 'kirki_config', 'munk_customize_typography_navigation' );

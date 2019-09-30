@@ -7,10 +7,10 @@
 function munk_customize_colors_woocommerce( $config ) {
 
     Kirki::add_section( 'munk_colors_woocommerce', array(
-        'priority'   => 14,
+        'priority'   => 50,
         'capability' => 'edit_theme_options',
-        'title'      => esc_html__( 'Woocommerce', 'munk' ),
-        'panel' =>  'munk_colors_panel'
+        'title'      => esc_html__( 'Colors Settings', 'munk' ),
+        'panel' =>  'woocommerce'
     ) );    
 		
 	

@@ -120,4 +120,4 @@ function munk_color_footer_settings( $config ) {
 		
 
 }
-add_action( 'kirki_config', 'munk_color_footer_settings' );
+//add_action( 'kirki_config', 'munk_color_footer_settings' );

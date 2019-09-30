@@ -1,23 +1,22 @@
 <?php
 /**
- * Button Color Settings
+ * Layout Site Buttons
  *
  */
- 
-function munk_color_button_settings( $config ) {
 
-    Kirki::add_section( 'munk_color_button', array(
-        'priority'   => 14,
+function munk_customize_layout_buttons ( $config ) {
+
+    Kirki::add_section( 'munk_layout_button', array(
+        'priority'   => 15,
         'capability' => 'edit_theme_options',
-        'title'      => esc_html__( 'Buttons & Icons', 'munk' ),
-        'panel' =>  'munk_colors_panel'
-    ) );    
+        'title'      => esc_html__( 'Buttons', 'munk' ),
+    ) );			
 	
 	Kirki::add_field( 'munk', array(
 		'type'        => 'custom',
         'settings'    => 'munk_color_primary_button_label',
 		'label'       => '',
-        'section'     => 'munk_color_button',
+        'section'     => 'munk_layout_button',
 		'default'     => '<div style="color: #191919;font-weight:600;font-size: 13px;border: 1px solid #d5d0d0;padding: 5px 15px;background-color: #fff;text-transform: uppercase;margin-left: -12px;margin-right: -14px;">' . esc_html__( 'Primary Buttons', 'munk' ) . '</div>',
 		'priority'    => '5',
 	) );		
@@ -26,7 +25,7 @@ function munk_color_button_settings( $config ) {
 		'type'        => 'multicolor',
 		'settings'    => 'munk_color_primary_button',
 		'label'       => '',
-		'section'     => 'munk_color_button',
+		'section'     => 'munk_layout_button',
 		'priority'    => 10,
 		'transport'   => 'auto',
 		'choices'     => array(
@@ -119,7 +118,7 @@ function munk_color_button_settings( $config ) {
 		'type'        => 'custom',
         'settings'    => 'munk_color_secondary_button_label',
 		'label'       => '',
-        'section'     => 'munk_color_button',
+        'section'     => 'munk_layout_button',
 		'default'     => '<div style="color: #191919;font-weight:600;font-size: 13px;border: 1px solid #d5d0d0;padding: 5px 15px;background-color: #fff;text-transform: uppercase;margin-left: -12px;margin-right: -14px;">' . esc_html__( 'Secondary Buttons', 'munk' ) . '</div>',
 		'priority'    => '15',
 	) );		
@@ -127,7 +126,7 @@ function munk_color_button_settings( $config ) {
 	Kirki::add_field( 'munk',  array(
 		'type'        => 'multicolor',
 		'settings'    => 'munk_color_secondary_button',
-		'section'     => 'munk_color_button',
+		'section'     => 'munk_layout_button',
 		'priority'    => 20,
 		'transport'   => 'auto',
 		'choices'     => array(
@@ -176,6 +175,57 @@ function munk_color_button_settings( $config ) {
 		),		
 	) );		
 	
+Kirki::add_field( 'munk', array(
+		'type'        => 'typography',
+		'settings'    => 'munk_typography_primary_button',
+		'label'       => esc_html__('Primary Button', 'munk'),
+		'section'     => 'munk_layout_button',
+		'priority'    => 10,
+		'transport'   => 'auto',
+		'default'     => array(
+			'font-family'    => 'IBM Plex Sans',
+			'variant'        => 'regular',
+			'font-size'      => '17px',
+			'line-height'    => '1.6',
+			'text-transform' => 'none',
+		),
+		'output'    => array(
+			array(
+			  'element'   => '.navigation.pagination .nav-links a:hover,.navigation.pagination .nav-links .current, .no-results .search-submit, .woocommerce div.product .cart .single_add_to_cart_button, .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt,.wp-block-button__link,.is-style-outline .wp-block-button__link, .woocommerce-page ul.products li.product .button, .woocommerce ul.products li.product .button, .woocommerce-js.woocommerce ul.products li.product .button, .wc-block-grid__product .wp-block-button__link, .has-aligned-buttons .wc-block-grid__product .wp-block-button__link, .woocommerce-page ul.products li.product.fixedbutton .button, .woocommerce ul.products li.product.fixedbutton .button, .woocommerce-js.woocommerce ul.products li.product.fixedbutton .button',
+			),
+			array(
+			  'element'   => '.navigation.pagination .nav-links a:hover,.navigation.pagination .nav-links .current, .no-results .search-submit, .woocommerce div.product .cart .single_add_to_cart_button, .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt,.wp-block-button__link,.is-style-outline .wp-block-button__link, .woocommerce-page ul.products li.product .button, .woocommerce ul.products li.product .button, .woocommerce-js.woocommerce ul.products li.product .button, .wc-block-grid__product .wp-block-button__link, .has-aligned-buttons .wc-block-grid__product .wp-block-button__link, .woocommerce-page ul.products li.product.fixedbutton .button, .woocommerce ul.products li.product.fixedbutton .button, .woocommerce-js.woocommerce ul.products li.product.fixedbutton .button',
+			  'context'  => array( 'editor' ),
+			),			
+		),		
+	) );	
+	
+	Kirki::add_field( 'munk', array(
+		'type'        => 'typography',
+		'settings'    => 'munk_typography_secondary_button',
+		'label'       => esc_html__('Secondary Button', 'munk'),
+		'section'     => 'munk_layout_button',
+		'priority'    => 15,
+		'transport'   => 'auto',
+		'default'     => array(
+			'font-family'    => 'IBM Plex Sans',
+			'variant'        => 'regular',
+			'font-size'      => '17px',
+			'line-height'    => '1.6',
+			'text-transform' => 'none',
+		),
+		'output'    => array(
+			array(
+			  'element'   => '.entry-card .read-more a, .widget_search .search-submit, .mt-header-ed .search-submit, .entry-content form input#submit, .entry-content a.button, .entry-content button.button, .entry-content input.button, .entry-content form button, #respond .form-submit #submit,#respond .form-submit #submit:hover, .woocommerce #respond input#submit.alt, .no-results .search-submit,.woocommerce-page ul.products li.product .added_to_cart, .woocommerce ul.products li.product .added_to_cart, .woocommerce-js.woocommerce ul.products li.product .added_to_cart,.wc-block-grid__product .added_to_cart, .woocommerce a.button',
+			),
+			array(
+			  'element'   => '.entry-card .read-more a, .widget_search .search-submit, .mt-header-ed .search-submit, .entry-content form input#submit, .entry-content a.button, .entry-content button.button, .entry-content input.button, .entry-content form button, #respond .form-submit #submit,#respond .form-submit #submit:hover, .woocommerce #respond input#submit.alt, .no-results .search-submit,.woocommerce-page ul.products li.product .added_to_cart, .woocommerce ul.products li.product .added_to_cart, .woocommerce-js.woocommerce ul.products li.product .added_to_cart,.wc-block-grid__product .added_to_cart, .woocommerce a.button',
+			  'context'  => array( 'editor' ),
+			),			
+		),		
+	) );		
+	
+	
 
 }
-//add_action( 'kirki_config', 'munk_color_button_settings' );
+add_action( 'kirki_config', 'munk_customize_layout_buttons' );

@@ -88,9 +88,5 @@ function munk_typography_footer_settings( $config ) {
 		),		
 	) );					
 	
-	
-	
-		
-
 }
-add_action( 'kirki_config', 'munk_typography_footer_settings' );
+//add_action( 'kirki_config', 'munk_typography_footer_settings' );

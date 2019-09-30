@@ -173,4 +173,4 @@ function munk_customize_color_header( $config ) {
 	
 
 }
-add_action( 'kirki_config', 'munk_customize_color_header' );
+//add_action( 'kirki_config', 'munk_customize_color_header' );

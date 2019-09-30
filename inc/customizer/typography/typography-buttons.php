@@ -65,4 +65,4 @@ function munk_typography_button_settings( $config ) {
 	
 
 }
-add_action( 'kirki_config', 'munk_typography_button_settings' );
+//add_action( 'kirki_config', 'munk_typography_button_settings' );

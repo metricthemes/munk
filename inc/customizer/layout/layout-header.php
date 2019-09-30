@@ -12,7 +12,6 @@ function munk_customize_layout_site_header ( $config ) {
     Kirki::add_panel('munk_layouts_header', array(
         'title' =>  esc_html__( 'Header', 'munk' ),
         'description'   =>  esc_html__( 'Panel for the Theme Header Layout Customization', 'munk' ),
-        'panel' =>  'munk_layout_panel',
         'priority' => 10,		
     ));		
 
