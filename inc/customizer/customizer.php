@@ -63,6 +63,32 @@ function munk_default_customize($wp_customize) {
 	$wp_customize->get_section ('header_image')->panel = 'munk_layouts_header';	
 	$wp_customize->get_section('header_image')->priority = 50;	
 	
+	$wp_customize->get_control ('background_color')->section = 'munk_layout_content_color';		
+	$wp_customize->get_control('background_color')->priority = 5;		
+	$wp_customize->get_control('background_color')->label = __('Body Background Color', 'munk');
+	$wp_customize->get_control('background_color')->description = __('Applies to entire site body background', 'munk');	
+
+	$wp_customize->remove_control( 'header_textcolor' );	
+	
+	$wp_customize->get_control('background_image')->section = 'munk_layout_content_color';			
+	$wp_customize->get_control('background_image')->priority = 100;			
+	
+	$wp_customize->get_control('background_preset')->section = 'munk_layout_content_color';			
+	$wp_customize->get_control('background_preset')->priority = 101;			
+	
+	$wp_customize->get_control('background_position')->section = 'munk_layout_content_color';			
+	$wp_customize->get_control('background_position')->priority = 102;				
+	
+	$wp_customize->get_control('background_size')->section = 'munk_layout_content_color';			
+	$wp_customize->get_control('background_size')->priority = 103;
+	
+	$wp_customize->get_control('background_repeat')->section = 'munk_layout_content_color';			
+	$wp_customize->get_control('background_repeat')->priority = 104;	
+	
+	$wp_customize->get_control('background_attachment')->section = 'munk_layout_content_color';			
+	$wp_customize->get_control('background_attachment')->priority = 104;		
+	
+
 }
 add_action( 'customize_register', 'munk_default_customize', 10 );
 
@@ -121,6 +147,8 @@ $munk_layout_sections = array( 'header', 'navigation', 'blog', 'sidebar', 'foote
 foreach( $munk_layout_sections as $munk_section ) {
  get_template_part('inc/customizer/layout/layout', $munk_section);
 }
+
+get_template_part('inc/customizer/site', 'title');
 
 /*
 $munk_color_sections = array( 'header', 'general', 'footer', 'sidebar', 'buttons' );

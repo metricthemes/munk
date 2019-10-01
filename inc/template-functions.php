@@ -83,19 +83,7 @@ function munk_setup() {
 		'flex-height' => true,
 		'flex-width'  => true,
 		'header-text' => array( 'site-title', 'site-description' ),				
-	) );
-		
-	$munk_header_arg = array(
-		'default-image'          => '',
-		'width'                  => 1900,
-		'height'                 => 500,
-		'flex-height'            => true,
-		'header-text'            => true,
-		'default-text-color'     => '191919',		
-		'flex-width'             => false,
-		'wp-head-callback' 		 => 'munk_header_title',								
-	);
-	add_theme_support( 'custom-header', $munk_header_arg );
+	) );		
 
 }
 endif;

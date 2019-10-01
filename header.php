@@ -29,7 +29,7 @@
 <?php esc_html_e( 'Skip to content', 'munk' ); ?></a>
 
 
-		<?php
+		<?php				
 		munk_header_before(); 
         /*
         * @hooked munk_header_above_markup - 10
