@@ -540,12 +540,7 @@ form button {
 color:#ffffff;
 }
 .editor-writing-flow {
-    max-width: 1140px;
 	background-color:#ffffff;
-	margin: 0px auto;
-}
-.wp-block {
-    max-width: 1140px;
 }
 .wp-block[data-align="wide"] {
     max-width: none !important;
