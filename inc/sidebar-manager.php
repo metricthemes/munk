@@ -17,6 +17,15 @@ function munk_sidebar_manager() {
 
 		global $post;			
 		
+		$munk_cpt_args = array(
+		   'public'   => true,
+		);
+		$munk_cpt_output = 'names';
+		$munk_cpt_operator = 'and';
+		$munk_cpt_types_raw = get_post_types( $munk_cpt_args, $munk_cpt_output, $munk_cpt_operator ); 		
+   	    $munk_cpt_types = array_diff($munk_cpt_types_raw, array("product"));
+		
+		
 		$layout_no_sidebar = array();
 		$layout_no_sidebar[0]= 'no-sidebar';
 		$layout_no_sidebar[1] = 'd-none';				
@@ -28,7 +37,7 @@ function munk_sidebar_manager() {
 		$layout_left_sidebar[2] = 'col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8 order-xl-2 order-lg-2 order-md-2 order-2';
 		
 		$layout_right_sidebar = array();
-		$layout_right_sidebar[0]= 'righ-sidebar';
+		$layout_right_sidebar[0]= 'right-sidebar';
 		$layout_right_sidebar[1] = 'order-xl-2 order-lg-2 order-md-2 order-2';
 		$layout_right_sidebar[2] = 'col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8 order-xl-1 order-lg-1 order-md-2 order-2';		
 		
@@ -49,7 +58,7 @@ function munk_sidebar_manager() {
 			
 		}								
 		
-		if ( is_singular() ) {
+		if ( is_singular($munk_cpt_types) ) {
 		
 				$post_type = get_post_type();		
 				$munk_meta_layout = get_post_meta( $post->ID, 'munk_settings_main_sidebar', true );			
@@ -89,6 +98,7 @@ function munk_sidebar_manager() {
 		
 }
 endif;
+
 /*
 * Adds a class to <body> based on the page layout selected
 * @since 1.0.0

@@ -45,11 +45,11 @@ if ( ! class_exists( 'Munk_Woocommerce' ) ) :
 					get_template_part('inc/compatibility/woocommerce/customizer/woocommerce-customizer', 'product');
 					get_template_part('inc/compatibility/woocommerce/customizer/woocommerce', 'typography');
 					get_template_part('inc/compatibility/woocommerce/customizer/woocommerce', 'colors');
-																																	
-					add_filter( 'munk_page_layout', array( $this, 'munk_wc_page_layout' ) );
-					add_filter( 'munk_get_sidebar', array( $this, 'munk_woocommerce_sidebar' ) );
+															
+					add_action( 'template_redirect', array( $this, 'munk_wc_shop_check' ) );
 					
-					add_action( 'after_setup_theme',  array( $this, 'munk_woocommerce_setup' ) );
+					add_filter( 'munk_get_sidebar', array( $this, 'munk_woocommerce_sidebar' ) );					
+					add_action( 'after_setup_theme',  array( $this, 'munk_woocommerce_setup' ) );					
 					add_action( 'wp_enqueue_scripts', array( $this, 'munk_woocommerce_scripts' ) );			
 					add_action( 'widgets_init', array( $this, 'munk_wc_widgets_init' ));						
 					add_action('woocommerce_shop_loop_item_title', array( $this, 'munk_product_cat_ed' ), 5);															
@@ -79,6 +79,12 @@ if ( ! class_exists( 'Munk_Woocommerce' ) ) :
 								
 									
 				}
+								
+				function munk_wc_shop_check() {
+					if ( is_shop() || is_product_category() || is_product_tag() || is_product() ) {	
+						add_filter( 'munk_page_layout', array( $this, 'munk_wc_page_layout' ) );
+					}
+				}				
 				
 				/**
 				 * WooCommerce setup function.
@@ -192,13 +198,13 @@ if ( ! class_exists( 'Munk_Woocommerce' ) ) :
 				/* classes for sidebar  woocommerce layout
 				* @since 1.0.0
 				*/		
-				function munk_wc_page_layout() {				
+				function munk_wc_page_layout() {			
 				
-						global $post;			
-						
+					global $post;										
+																				
 						$layout_no_sidebar = array();
 						$layout_no_sidebar[0]= 'no-sidebar';
-						$layout_no_sidebar[1] = 'd-none';				
+						$layout_no_sidebar[1] = 'd-none';										
 						$layout_no_sidebar[2] = 'col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12';			
 						
 						$layout_left_sidebar = array();
@@ -207,11 +213,11 @@ if ( ! class_exists( 'Munk_Woocommerce' ) ) :
 						$layout_left_sidebar[2] = 'col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8 order-xl-2 order-lg-2 order-md-2 order-2';
 						
 						$layout_right_sidebar = array();
-						$layout_right_sidebar[0]= 'righ-sidebar';
+						$layout_right_sidebar[0]= 'right-sidebar';
 						$layout_right_sidebar[1] = 'order-xl-2 order-lg-2 order-md-2 order-2';
 						$layout_right_sidebar[2] = 'col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8 order-xl-1 order-lg-1 order-md-2 order-2';		
 						
-						$page_layout = $layout_right_sidebar;
+						$page_layout = $layout_right_sidebar; // default sidebar position
 						
 						if ( is_shop() || is_product_category() || is_product_tag() ) {
 					
@@ -263,7 +269,9 @@ if ( ! class_exists( 'Munk_Woocommerce' ) ) :
 						
 						}							
 													
-						return $page_layout;				
+						return $page_layout;							
+											
+						
 				}
 				
 
